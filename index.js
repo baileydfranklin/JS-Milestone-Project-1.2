@@ -186,6 +186,7 @@ const element3 = document.getElementById("startGameContainer");
 element3.appendChild(startButton);
 
 startButton.addEventListener('click', startGame) // Start game function
+
 function startGame(){
 
     console.log('The game has started'); // Test if Button is working
