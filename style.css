@@ -5,18 +5,15 @@
     margin-right: 350px;
     box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
 }
-
 h4{
     margin-left: 100px;
     margin-right: 100px;
 }
-
-
+/*------------------------------------------------------*/
 #startGameContainer{
     text-align: center;
     
 }
-
 #startButton {
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -40,3 +37,31 @@ h4{
     border: solid 3px #CD853F;
     color: #FFFFFF;
 }
+/*------------------------------------------------------*/
+#deckPile1{
+    position: absolute;
+    top: 350px;
+    left: 200px;
+    box-shadow: 10px 10px 20px 4px rgba(0,0,0,.8);
+}
+#deckPile2{
+    position: absolute;
+    top: 348px;
+    left: 198px;
+}
+#deckPile3{
+    position: absolute;
+    top: 346px;
+    left: 196px;
+}
+#deckPile4{
+    position: absolute;
+    top: 344px;
+    left: 194px;
+}
+#deckPile5{
+    position: absolute;
+    top: 342px;
+    left: 192px;
+}
+/*------------------------------------------------------*/

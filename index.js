@@ -168,7 +168,7 @@ const element1 = document.getElementById("headerContainer");
 element1.appendChild(h1);
 
 const h4 = document.createElement("h4"); // h4 RULES
-const h4Text = document.createTextNode("Rules: Blackjack hands are scored by their point total. The hand with the highest total wins as long as it doesn't exceed 21; a hand with a higher total than 21 is said to bust. Cards 2 through 10 are worth their face value, and face cards (jack, queen, king) are also worth 10.")
+const h4Text = document.createTextNode("Rules: Blackjack hands are scored by their point total. The hand with the highest total wins as long as it doesn't exceed 21; a hand with a higher total than 21 is said to bust. You automatically lose. Cards 2 through 10 are worth their face value, and face cards (Jack, Queen, King) are also worth 10. Good luck!")
 h4.appendChild(h4Text);
 const element2 = document.getElementById("headerContainer");
 element2.appendChild(h4);
@@ -189,23 +189,47 @@ startButton.addEventListener('click', startGame) // Start game function
 function startGame(){
 
     console.log('The game has started'); // Test if Button is working
-    element3.parentNode.removeChild(startGameContainer);// Remove Start Button after 'click'
+    element3.parentNode.removeChild(startGameContainer); // Remove Start Button after 'click'
 
     element2.parentNode.removeChild(headerContainer); // Remove header container after 'click'
     // element1.parentNode.removeChild(headerContainer); // Remove header container after 'click'
 
 
 
-    function addImage(){
-    let deckPile = document.createElement('img');
-    deckPile.src = 'assets/.faceDownCard.jfif';
-    let id_name = 'deckPile';
-    deckPile.setAttribute("id", id_name);
-    document.getElementById('inGameContainer').appendChild(deckPile);
+    function addDeck(){
+    let deckPile1 = document.createElement('img');
+    deckPile1.src = 'assets/.faceDownCard.jfif';
+    let id_name1 = 'deckPile1';
+    deckPile1.setAttribute("id", id_name1);
+    document.getElementById('inGameContainer').appendChild(deckPile1);
+
+    let deckPile2 = document.createElement('img');
+    deckPile2.src = 'assets/.faceDownCard.jfif';
+    let id_name2 = 'deckPile2';
+    deckPile2.setAttribute("id", id_name2);
+    document.getElementById('inGameContainer').appendChild(deckPile2);
+
+    let deckPile3 = document.createElement('img');
+    deckPile3.src = 'assets/.faceDownCard.jfif';
+    let id_name3 = 'deckPile3';
+    deckPile3.setAttribute("id", id_name3);
+    document.getElementById('inGameContainer').appendChild(deckPile3);
+
+    let deckPile4 = document.createElement('img');
+    deckPile4.src = 'assets/.faceDownCard.jfif';
+    let id_name4 = 'deckPile4';
+    deckPile4.setAttribute("id", id_name4);
+    document.getElementById('inGameContainer').appendChild(deckPile4);
+
+    let deckPile5 = document.createElement('img');
+    deckPile5.src = 'assets/.faceDownCard.jfif';
+    let id_name5 = 'deckPile5';
+    deckPile5.setAttribute("id", id_name5);
+    document.getElementById('inGameContainer').appendChild(deckPile5);
     
-    console.log('addImage Function is working')
+    console.log('addImage Function is working') // Test if addImage Function is working
     };
-    addImage()
+    addDeck()
 }
 
 
