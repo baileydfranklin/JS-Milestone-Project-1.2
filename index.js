@@ -236,13 +236,12 @@ function startGame(){
     //start hands here
     function dealCards(deck){
         let randomCard = Math.floor(Math.random()*deck.length);
-        let playerCard1 = deck[randomCard];
-        console.log(deck[randomCard])
+        let dealtCard1 = deck[randomCard];
 
-        return playerCard1;
+        return dealtCard1;
     }
-    let dealtCard1 = dealCards(deck);
-    console.log(dealtCard1)
+    let playerCard1 = dealCards(deck);
+    console.log(playerCard1) // Test if random card was selected
 }
 
 
