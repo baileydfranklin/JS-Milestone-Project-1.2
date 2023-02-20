@@ -1535,24 +1535,10 @@ function startGame(){
     console.log('addImage Function for the Displayed Deck is working'); // Test if addImage Function is working
     
 }
-    // if("AC" == deck[0].name){
-    //     let displayPlayerCard1 = document.createElement('img');
-    //     displayPlayerCard1.src = 'assets/AC.png';
-    //     let id_name6 = 'displayPlayerCard1';
-    //     displayPlayerCard1.setAttribute("id", id_name6);
-    //     document.getElementById('inGameContainer').appendChild(displayPlayerCard1);
-
-    //     console.log('If statement is working');
-    // }
-    
-    // playerCard1 = deck[0].name; // Using for reference
-    // console.log(playerCard1) // Using for reference
-    // console.log(deck[0].name) // Using for reference
 
 
 
-
-let userHand = [];
+// let userHand = [];
 
 
 

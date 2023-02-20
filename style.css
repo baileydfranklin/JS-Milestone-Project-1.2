@@ -1,3 +1,9 @@
+body { /*Background Image*/
+    background-image: url('https://img.freepik.com/premium-vector/poker-table-background-green-color-background-with-card-suits-poker-table-premium-background_511290-24.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*------------------------------------------------------*/
 #headerContainer{
     background-color: darkgreen;
     border: solid 10px #CD7F32;
