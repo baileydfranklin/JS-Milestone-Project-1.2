@@ -185,6 +185,16 @@ startButton.appendChild(startButtonText);
 const element3 = document.getElementById("startGameContainer");
 element3.appendChild(startButton);
 
+startButton.addEventListener('click', startGame) // Start game function
+function startGame(){
+
+    console.log('The game has started'); // Test if Button is working
+    element3.parentNode.removeChild(startGameContainer);// Remove Start Button after 'click'
+
+    element2.parentNode.removeChild(headerContainer); // Remove header container after 'click'
+    element1.parentNode.removeChild(headerContainer); // Remove header container after 'click'
+}
+
 
 let userHand = [];
 
