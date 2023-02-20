@@ -230,6 +230,19 @@ function startGame(){
     console.log('addImage Function is working') // Test if addImage Function is working
     };
     addDeck()
+
+
+
+    //start hands here
+    function dealCards(deck){
+        let randomCard = Math.floor(Math.random()*deck.length);
+        let playerCard1 = deck[randomCard];
+        console.log(deck[randomCard])
+
+        return playerCard1;
+    }
+    let dealtCard1 = dealCards(deck);
+    console.log(dealtCard1)
 }
 
 

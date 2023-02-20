@@ -42,7 +42,7 @@ h4{
     position: absolute;
     top: 350px;
     left: 200px;
-    box-shadow: 10px 10px 20px 4px rgba(0,0,0,.8);
+    box-shadow: 10px 10px 20px 4px rgba(0,0,0,1);
 }
 #deckPile2{
     position: absolute;
@@ -65,3 +65,8 @@ h4{
     left: 192px;
 }
 /*------------------------------------------------------*/
+#deckPile2:hover{ /*Use this for user and computer hand*/
+    top: 400px;
+    left: 250px;
+    transition-duration: 1s;
+}
