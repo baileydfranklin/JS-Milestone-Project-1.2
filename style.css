@@ -3,6 +3,7 @@
     border: solid 10px #CD7F32;
     margin-left: 350px;
     margin-right: 350px;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
 }
 
 h4{
@@ -13,12 +14,29 @@ h4{
 
 #startGameContainer{
     text-align: center;
+    
 }
 
-#startButton{
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+#startButton {
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: solid 3px black;
     margin-top: 100px;
     font-size: 200%;
     background-color: #CD853F;
+    position: relative;
+    font-size: 28px; 
+    padding: 20px;
+    width: 200px;
+    transition-duration: 0.5s;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+}
+#startButton:hover{
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 00px;
+    background-color: #006400;
+    border: solid 3px #CD853F;
+    color: #FFFFFF;
 }
