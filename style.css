@@ -42,27 +42,37 @@ h4{
     position: absolute;
     top: 350px;
     left: 200px;
+    width: 225px;
+    height: 315px;
     box-shadow: 10px 10px 20px 4px rgba(0,0,0,1);
 }
 #deckPile2{
     position: absolute;
     top: 348px;
     left: 198px;
+    width: 225px;
+    height: 315px;
 }
 #deckPile3{
     position: absolute;
     top: 346px;
     left: 196px;
+    width: 225px;
+    height: 315px;
 }
 #deckPile4{
     position: absolute;
     top: 344px;
     left: 194px;
+    width: 225px;
+    height: 315px;
 }
 #deckPile5{
     position: absolute;
     top: 342px;
     left: 192px;
+    width: 225px;
+    height: 315px;
 }
 /*------------------------------------------------------*/
 #deckPile2:hover{ /*Use this for user and computer hand*/
@@ -70,3 +80,10 @@ h4{
     left: 250px;
     transition-duration: 1s;
 }
+/*------------------------------------------------------*/
+#displayPlayerCard1{
+    position: absolute;
+    top: 650px;
+    left: 800px;
+}
+/*------------------------------------------------------*/
