@@ -1526,6 +1526,15 @@ function startGame(){
         document.getElementById('inGameContainer').appendChild(displayComputerCard2);
     }
 
+    let computerHiddenCard = document.createElement('img');
+    computerHiddenCard.src = 'assets/.faceDownCard.jfif';
+    let id_name7 = 'computerHiddenCard';
+    computerHiddenCard.setAttribute("id", id_name7);
+    document.getElementById('inGameContainer').appendChild(computerHiddenCard);
+    
+    console.log('addImage Function for the Displayed Deck is working'); // Test if addImage Function is working
+    
+}
     // if("AC" == deck[0].name){
     //     let displayPlayerCard1 = document.createElement('img');
     //     displayPlayerCard1.src = 'assets/AC.png';
@@ -1539,7 +1548,7 @@ function startGame(){
     // playerCard1 = deck[0].name; // Using for reference
     // console.log(playerCard1) // Using for reference
     // console.log(deck[0].name) // Using for reference
-}
+
 
 
 
