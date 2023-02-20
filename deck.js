@@ -155,4 +155,6 @@ const deck = [
     {
         name: "KS", value: 10
     },
-]
+];
+
+export {deck};

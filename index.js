@@ -1,3 +1,5 @@
+import { deck } from '/deck.js';
+
 console.log(Math.random()*deck.length)
 
 
