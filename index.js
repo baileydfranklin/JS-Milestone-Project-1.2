@@ -158,6 +158,9 @@ const deck = [
 ];
 //////////     ^^^DECK^^^     //////////
 
+
+
+/////     HEADER CONTAINER     /////
 const h1 = document.createElement("h1"); // h1
 const h1Text = document.createTextNode("Ready To Play Some Black Jack?!");
 h1.appendChild(h1Text);
@@ -172,7 +175,19 @@ element2.appendChild(h4);
 
 document.getElementById("headerContainer").style.textAlign = "center"; // CSS Center Text within headerContainer
 
+
+
+/////     START GAME CONTAINER     /////
+const startButton = document.createElement("button");
+startButton.setAttribute('id', 'startButton');
+const startButtonText = document.createTextNode("Start Game");
+startButton.appendChild(startButtonText);
+const element3 = document.getElementById("startGameContainer");
+element3.appendChild(startButton);
+
+
 let userHand = [];
+
 
 
 
