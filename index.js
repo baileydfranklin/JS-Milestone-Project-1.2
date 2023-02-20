@@ -1,6 +1,6 @@
 const deck = [
     {
-        name: "AC", value: 10
+        name: "AC", value: 10, Image: '/assets/AC.png'
     },
     {
         name: "2C", value: 2
@@ -192,7 +192,20 @@ function startGame(){
     element3.parentNode.removeChild(startGameContainer);// Remove Start Button after 'click'
 
     element2.parentNode.removeChild(headerContainer); // Remove header container after 'click'
-    element1.parentNode.removeChild(headerContainer); // Remove header container after 'click'
+    // element1.parentNode.removeChild(headerContainer); // Remove header container after 'click'
+
+
+
+    function addImage(){
+    let deckPile = document.createElement('img');
+    deckPile.src = 'assets/.faceDownCard.jfif';
+    let id_name = 'deckPile';
+    deckPile.setAttribute("id", id_name);
+    document.getElementById('inGameContainer').appendChild(deckPile);
+    
+    console.log('addImage Function is working')
+    };
+    addImage()
 }
 
 
