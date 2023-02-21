@@ -1244,7 +1244,7 @@ function startGame(){
     playerCount += playerCard2.value;
     console.log(playerCount) // Test if player count is adding up correctly
 
-
+    //ADD IN PLAYERS TOTAL CARD VALUE AFTER SECOND CARD IS DRAWN HERE
 
     function dealCards4(deck){
         let randomCard = Math.floor(Math.random()*deck.length);
@@ -1576,12 +1576,6 @@ function startGame(){
     document.getElementById('inGameContainer').appendChild(computerHiddenCard);
     
     console.log('addImage Function for the Displayed Deck is working'); // Test if addImage Function is working
-    
-    playerCount += playerCard2.value;
-    console.log(playerCount) // Test if player count is adding up correctly
-
-    computerCount +=computerCard2.value;
-    console.log(computerCard1.value) // Test if computer count is adding up correctly
 
 }
 
