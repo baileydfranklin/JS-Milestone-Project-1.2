@@ -90,7 +90,7 @@ h2{
     left: 850px;
     transition-duration: 1s;
 }
-/*------------------------------------------------------DISPLAYED CARDS*/ 
+/*------------------------------------------------------DISPLAYED CARDS FOR INITIAL GAME SET UP*/ 
 #displayPlayerCard1{
     position: absolute;
     top: 650px;
@@ -121,6 +121,13 @@ h2{
     left: 850px;
     width: 225px;
     height: 315px;
+    box-shadow: 10px 10px 20px 4px rgba(0,0,0,1);
+}
+/*------------------------------------------------------DISPLAYED CARDS AFTER GAME SET UP*/ 
+#displayHitCard1{
+    position: absolute;
+    top: 650px;
+    left: 1125px;
     box-shadow: 10px 10px 20px 4px rgba(0,0,0,1);
 }
 /*------------------------------------------------------SCORE BOARD*/
@@ -202,4 +209,23 @@ h2{
     background-color: #006400;
     border: solid 3px #CD853F;
     color: #FFFFFF;
+}
+#bustHitButton{
+    position: absolute;
+    top: 500px;
+    left: 575px;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    opacity: 0;
+    border: solid 3px black;
+    font-size: 200%;
+    background-color: #CD853F;
+    position: relative;
+    font-size: 28px; 
+    padding: 20px;
+    width: 200px;
+    transition-duration: 3s;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
 }
