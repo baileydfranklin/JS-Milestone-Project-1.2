@@ -245,12 +245,36 @@ h2{
     height: 315px;
     opacity: 0;
 }
+#displayStayCard2{
+    position: absolute;
+    top: 100px;
+    left: 1125px;
+    width: 225px;
+    height: 315px;
+    box-shadow: 10px 10px 20px 4px rgba(0,0,0,1);
+}
+#displayStayCard3{
+    position: absolute;
+    top: 100px;
+    left: 1400px;
+    width: 225px;
+    height: 315px;
+    box-shadow: 10px 10px 20px 4px rgba(0,0,0,1);
+}
+#displayStayCard4{
+    position: absolute;
+    top: 100px;
+    left: 1675px;
+    width: 225px;
+    height: 315px;
+    box-shadow: 10px 10px 20px 4px rgba(0,0,0,1);
+}
 /*------------------------------------------------------END GAME SCREEN*/
 #endGameText{
     position: absolute;
     top: 365px;
     left: 577px;
-    font-size: 300%;
+    font-size: 270%;
     width: 490px;
     height: 215px;
     text-align: center;
