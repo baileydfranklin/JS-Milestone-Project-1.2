@@ -130,6 +130,12 @@ h2{
     left: 1125px;
     box-shadow: 10px 10px 20px 4px rgba(0,0,0,1);
 }
+#displayHitCard2{
+    position: absolute;
+    top: 650px;
+    left: 1375px;
+    box-shadow: 10px 10px 20px 4px rgba(0,0,0,1);
+}
 /*------------------------------------------------------SCORE BOARD*/
 #scoreBoard1{
     position: absolute;
@@ -228,4 +234,48 @@ h2{
     width: 200px;
     transition-duration: 3s;
     box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+}
+/*------------------------------------------------------END GAME SCREEN*/
+#endGameText{
+    position: absolute;
+    top: 365px;
+    left: 577px;
+    font-size: 300%;
+    width: 490px;
+    height: 215px;
+    text-align: center;
+
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    background-color: #006400;
+    border: solid 10px #CD853F;
+    box-shadow: 100px 100px 100px 4000px rgba(0,0,0,.8);
+}
+#restartButton{
+    position: absolute;
+    top: 510px;
+    left: 730px;
+    font-size: 300%;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: solid 3px black;
+    font-size: 200%;
+    background-color: #CD853F;
+    transition-duration: 0.5s;
+    /* box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8); */
+}
+#restartButton:hover{
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 00px;
+    background-color: #006400;
+    border: solid 3px #CD853F;
+    color: #FFFFFF;
 }
