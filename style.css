@@ -152,3 +152,54 @@ h2{
     top: 35px;
     left: 250px;
 }
+/*------------------------------------------------------IN GAME BUTTONS*/
+#hitButton{
+    position: absolute;
+    top: 500px;
+    left: 575px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: solid 3px black;
+    font-size: 200%;
+    background-color: #CD853F;
+    position: relative;
+    font-size: 28px; 
+    padding: 20px;
+    width: 200px;
+    transition-duration: 0.5s;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+}
+#hitButton:hover{
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 00px;
+    background-color: #006400;
+    border: solid 3px #CD853F;
+    color: #FFFFFF;
+}
+#stayButton{
+    position: absolute;
+    top: 500px;
+    left: 650px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: solid 3px black;
+    font-size: 200%;
+    background-color: #CD853F;
+    position: relative;
+    font-size: 28px; 
+    padding: 20px;
+    width: 200px;
+    transition-duration: 0.5s;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+}
+#stayButton:hover{
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 00px;
+    background-color: #006400;
+    border: solid 3px #CD853F;
+    color: #FFFFFF;
+}

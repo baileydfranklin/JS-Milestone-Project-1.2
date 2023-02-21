@@ -1577,6 +1577,26 @@ function startGame(){
     
     console.log('addImage Function for the Displayed Deck is working'); // Test if addImage Function is working
 
+
+
+    const hitButton = document.createElement("button");
+    hitButton.setAttribute('id', 'hitButton');
+    const hitButtonText = document.createTextNode("Hit (me)");
+    hitButton.appendChild(hitButtonText);
+    const element6 = document.getElementById("inGameContainer");
+    element6.appendChild(hitButton);
+
+    // hitButton.addEventListener('click') // Hit button function
+
+    const stayButton = document.createElement("button");
+    stayButton.setAttribute('id', 'stayButton');
+    const stayButtonText = document.createTextNode("Stay");
+    stayButton.appendChild(stayButtonText);
+    const element7 = document.getElementById("inGameContainer");
+    element7.appendChild(stayButton);
+
+    // stayButton.addEventListener('click') // Stay button function
+
 }
 
 
