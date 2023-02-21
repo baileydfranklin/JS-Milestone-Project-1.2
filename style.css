@@ -82,7 +82,6 @@ h2{
     left: 192px;
     width: 225px;
     height: 315px;
-    /* transition-duration: 5s; */
 }
 /*------------------------------------------------------ANIMATION FOR DEALING CARDS*/
 #deckPile5:hover{ /*Use this for user and computer hand*/

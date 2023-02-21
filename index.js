@@ -2608,6 +2608,491 @@ function startGame(){
                 computerCount += stayCard2.value;
                 console.log(`${computerCount} Computer's total value with 4 cards`)
 
+                if(computerCount < 21 && computerCount < playerCount){
+                    function dealStay3(deck) {
+                        let randomCard = Math.floor(Math.random() * deck.length);
+                        let dealStay3 = deck[randomCard];
+    
+                        return dealStay3;
+                    }
+                    let stayCard3 = dealStay2(deck);
+                    console.log(stayCard3) // Test if random card was selected
+    
+                    if (stayCard3.name == deck[0].name) { // STAY FUNCTION
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/AC.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[1].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/2C.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[2].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/3C.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[3].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/4C.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[4].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/5C.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[5].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/6C.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[6].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/7C.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[7].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/8C.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[8].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/9C.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[9].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/10C.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[10].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/JC.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[11].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/QC.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[12].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/KC.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[13].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/AD.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[14].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/2D.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[15].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/3D.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[16].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/4D.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[17].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/5D.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[18].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/6D.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[19].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/7D.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[20].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/8D.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[21].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/9D.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[22].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/10D.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[23].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/JD.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[24].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/QD.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[25].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/KD.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[26].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/AH.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[27].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/2H.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[28].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/3H.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[29].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/4H.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[30].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/5H.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[31].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/6H.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[32].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/7H.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[33].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/8H.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[34].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/9H.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[35].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/10H.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[36].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/JH.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[37].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/QH.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[38].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/KH.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[39].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/AS.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[40].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/2S.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[41].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/3S.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[42].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/4S.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[43].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/5S.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[44].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/6S.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[45].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/7S.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[46].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/8S.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[47].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/9S.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[48].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/10S.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[49].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/JS.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[50].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/QS.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    } else if (stayCard3.name == deck[51].name) {
+                        let displayStayCard4 = document.createElement('img');
+                        displayStayCard4.src = 'assets/QS.png';
+                        let id_name6 = 'displayStayCard4';
+                        displayStayCard4.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                    }
+    
+                    computerCount += stayCard3.value;
+                    console.log(`${computerCount} Computer's total value with 5 cards`)
+
+                    if(computerCount < 21 && computerCount < playerCount){
+                        // Code is here for computer to draw 6th card. Very unlikely though.
+                    }else if(computerCount < 21 && computerCount > playerCount){
+                        function endGame() {
+                            const h3 = document.createElement("h3"); // h3
+                            h3.setAttribute('id', 'endGameText')
+                            const h3Text = document.createTextNode("The Computer won! You lost this round.");
+                            h3.appendChild(h3Text);
+                            const element8 = document.getElementById("inGameContainer");
+                            element8.appendChild(h3);
+        
+                            const restartButton = document.createElement("button");
+                            restartButton.setAttribute('id', 'restartButton');
+                            const restartButtonText = document.createTextNode("Restart");
+                            restartButton.appendChild(restartButtonText);
+                            const element9 = document.getElementById("inGameContainer");
+                            element9.appendChild(restartButton);
+        
+                            restartButton.addEventListener('click', startGame) // Hit button function
+                        }
+                        endGame()
+                    }else if(computerCount < 21 && computerCount == playerCount){
+                        function endGame() {
+                            const h3 = document.createElement("h3"); // h3
+                            h3.setAttribute('id', 'endGameText')
+                            const h3Text = document.createTextNode("It is a draw.");
+                            h3.appendChild(h3Text);
+                            const element8 = document.getElementById("inGameContainer");
+                            element8.appendChild(h3);
+        
+                            const restartButton = document.createElement("button");
+                            restartButton.setAttribute('id', 'restartButton');
+                            const restartButtonText = document.createTextNode("Restart");
+                            restartButton.appendChild(restartButtonText);
+                            const element9 = document.getElementById("inGameContainer");
+                            element9.appendChild(restartButton);
+        
+                            restartButton.addEventListener('click', startGame) // Hit button function
+                        }
+                        endGame()
+                    }else if(computerCount == 21){
+                        function endGame() {
+                            const h3 = document.createElement("h3"); // h3
+                            h3.setAttribute('id', 'endGameText')
+                            const h3Text = document.createTextNode("The Computer won! You lost this round.");
+                            h3.appendChild(h3Text);
+                            const element8 = document.getElementById("inGameContainer");
+                            element8.appendChild(h3);
+        
+                            const restartButton = document.createElement("button");
+                            restartButton.setAttribute('id', 'restartButton');
+                            const restartButtonText = document.createTextNode("Restart");
+                            restartButton.appendChild(restartButtonText);
+                            const element9 = document.getElementById("inGameContainer");
+                            element9.appendChild(restartButton);
+        
+                            restartButton.addEventListener('click', startGame) // Hit button function
+                        }
+                        endGame()
+                    }else if(computerCount > 21){
+                        function endGame() {
+                            const h3 = document.createElement("h3"); // h3
+                            h3.setAttribute('id', 'endGameText')
+                            const h3Text = document.createTextNode("The Computer Busted!  You win!");
+                            h3.appendChild(h3Text);
+                            const element8 = document.getElementById("inGameContainer");
+                            element8.appendChild(h3);
+        
+                            const restartButton = document.createElement("button");
+                            restartButton.setAttribute('id', 'restartButton');
+                            const restartButtonText = document.createTextNode("Restart");
+                            restartButton.appendChild(restartButtonText);
+                            const element9 = document.getElementById("inGameContainer");
+                            element9.appendChild(restartButton);
+        
+                            restartButton.addEventListener('click', startGame) // Hit button function
+                        } // Else If Computer goes over 21
+                        endGame()
+                    }
+
+                }else if(computerCount < 21 && computerCount > playerCount){
+                    function endGame() {
+                        const h3 = document.createElement("h3"); // h3
+                        h3.setAttribute('id', 'endGameText')
+                        const h3Text = document.createTextNode("The Computer won! You lost this round.");
+                        h3.appendChild(h3Text);
+                        const element8 = document.getElementById("inGameContainer");
+                        element8.appendChild(h3);
+    
+                        const restartButton = document.createElement("button");
+                        restartButton.setAttribute('id', 'restartButton');
+                        const restartButtonText = document.createTextNode("Restart");
+                        restartButton.appendChild(restartButtonText);
+                        const element9 = document.getElementById("inGameContainer");
+                        element9.appendChild(restartButton);
+    
+                        restartButton.addEventListener('click', startGame) // Hit button function
+                    }
+                    endGame()
+                }else if(computerCount == playerCount){
+                    function endGame() {
+                        const h3 = document.createElement("h3"); // h3
+                        h3.setAttribute('id', 'endGameText')
+                        const h3Text = document.createTextNode("It is a draw.");
+                        h3.appendChild(h3Text);
+                        const element8 = document.getElementById("inGameContainer");
+                        element8.appendChild(h3);
+    
+                        const restartButton = document.createElement("button");
+                        restartButton.setAttribute('id', 'restartButton');
+                        const restartButtonText = document.createTextNode("Restart");
+                        restartButton.appendChild(restartButtonText);
+                        const element9 = document.getElementById("inGameContainer");
+                        element9.appendChild(restartButton);
+    
+                        restartButton.addEventListener('click', startGame) // Hit button function
+                    }
+                    endGame()
+                }else if(computerCount > 21){
+                    function endGame() {
+                        const h3 = document.createElement("h3"); // h3
+                        h3.setAttribute('id', 'endGameText')
+                        const h3Text = document.createTextNode("The Computer Busted!  You win!");
+                        h3.appendChild(h3Text);
+                        const element8 = document.getElementById("inGameContainer");
+                        element8.appendChild(h3);
+    
+                        const restartButton = document.createElement("button");
+                        restartButton.setAttribute('id', 'restartButton');
+                        const restartButtonText = document.createTextNode("Restart");
+                        restartButton.appendChild(restartButtonText);
+                        const element9 = document.getElementById("inGameContainer");
+                        element9.appendChild(restartButton);
+    
+                        restartButton.addEventListener('click', startGame) // Hit button function
+                    } // Else If Computer goes over 21
+                    endGame()
+                }else if(computerCount == 21){
+                    function endGame() {
+                        const h3 = document.createElement("h3"); // h3
+                        h3.setAttribute('id', 'endGameText')
+                        const h3Text = document.createTextNode("The Computer won! You lost this round.");
+                        h3.appendChild(h3Text);
+                        const element8 = document.getElementById("inGameContainer");
+                        element8.appendChild(h3);
+    
+                        const restartButton = document.createElement("button");
+                        restartButton.setAttribute('id', 'restartButton');
+                        const restartButtonText = document.createTextNode("Restart");
+                        restartButton.appendChild(restartButtonText);
+                        const element9 = document.getElementById("inGameContainer");
+                        element9.appendChild(restartButton);
+    
+                        restartButton.addEventListener('click', startGame) // Hit button function
+                    }
+                    endGame()
+                }
+
             } else if (computerCount > 21) {
                 function endGame() {
                     const h3 = document.createElement("h3"); // h3
@@ -2646,7 +3131,7 @@ function startGame(){
                     restartButton.addEventListener('click', startGame) // Hit button function
                 }
                 endGame()
-            } else if (computerCount > playerCount) {
+            } else if (computerCount < 21 && computerCount > playerCount) {
                 function endGame() {
                     const h3 = document.createElement("h3"); // h3
                     h3.setAttribute('id', 'endGameText')
@@ -2665,8 +3150,27 @@ function startGame(){
                     restartButton.addEventListener('click', startGame) // Hit button function
                 }
                 endGame()
-            } 
-        } else if (computerCount < 21 && computerCount == playerCount) { // if(computerCount < playerCount && computerCount < 21) Statement
+            } else if(computerCount == 21){
+                function endGame() {
+                    const h3 = document.createElement("h3"); // h3
+                    h3.setAttribute('id', 'endGameText')
+                    const h3Text = document.createTextNode("The Computer won! You lost this round.");
+                    h3.appendChild(h3Text);
+                    const element8 = document.getElementById("inGameContainer");
+                    element8.appendChild(h3);
+
+                    const restartButton = document.createElement("button");
+                    restartButton.setAttribute('id', 'restartButton');
+                    const restartButtonText = document.createTextNode("Restart");
+                    restartButton.appendChild(restartButtonText);
+                    const element9 = document.getElementById("inGameContainer");
+                    element9.appendChild(restartButton);
+
+                    restartButton.addEventListener('click', startGame) // Hit button function
+                }
+                endGame()
+            }
+        }else if (computerCount < 21 && computerCount == playerCount) { // if(computerCount < playerCount && computerCount < 21) Statement
             function endGame() {
                 const h3 = document.createElement("h3"); // h3
                 h3.setAttribute('id', 'endGameText')
@@ -2685,7 +3189,7 @@ function startGame(){
                 restartButton.addEventListener('click', startGame) // Hit button function
             }
             endGame()
-        } else if (computerCount < 21 && computerCount > playerCount) {
+        }else if (computerCount < 21 && computerCount > playerCount) {
             function endGame() {
                 const h3 = document.createElement("h3"); // h3
                 h3.setAttribute('id', 'endGameText')
@@ -2719,5 +3223,5 @@ function startGame(){
 
 
 ///   TO DO   ///
-// - Animate cards as they get dealt out
-// - Change 'Hit' and 'Stay' buttons to animated Suits
+// - Animate cards as they get dealt out - kind of important?
+// - Change 'Hit' and 'Stay' buttons to animated Suit buttons - not important. BUT cool.
