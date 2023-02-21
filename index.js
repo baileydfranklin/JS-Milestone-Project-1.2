@@ -1953,17 +1953,17 @@ function startGame(){
 
         computerCount += computerCard2.value;
         console.log(`${computerCount} Computer's total after second card is Flipped`)
-    
-        if(computerCount < playerCount && computerCount < 21){
+
+        if (computerCount < playerCount && computerCount < 21) {
             function dealStay1(deck) {
                 let randomCard = Math.floor(Math.random() * deck.length);
                 let dealStay1 = deck[randomCard];
-    
+
                 return dealStay1;
             }
             let stayCard1 = dealStay1(deck);
             console.log(stayCard1) // Test if random card was selected
-    
+
             if (stayCard1.name == deck[0].name) { // STAY FUNCTION
                 let displayStayCard2 = document.createElement('img');
                 displayStayCard2.src = 'assets/AC.png';
@@ -2277,20 +2277,20 @@ function startGame(){
                 displayStayCard2.setAttribute("id", id_name6);
                 document.getElementById('inGameContainer').appendChild(displayStayCard2);
             }
-            
+
             computerCount += stayCard1.value;
             console.log(`${computerCount} Computer's total value with 3 cards`)
 
-            if(computerCount < 21 && computerCount < playerCount){
+            if (computerCount < 21 && computerCount < playerCount) {
                 function dealStay2(deck) {
                     let randomCard = Math.floor(Math.random() * deck.length);
                     let dealStay2 = deck[randomCard];
-        
+
                     return dealStay2;
                 }
                 let stayCard2 = dealStay2(deck);
                 console.log(stayCard2) // Test if random card was selected
-        
+
                 if (stayCard2.name == deck[0].name) { // STAY FUNCTION
                     let displayStayCard3 = document.createElement('img');
                     displayStayCard3.src = 'assets/AC.png';
@@ -2607,8 +2607,8 @@ function startGame(){
 
                 computerCount += stayCard2.value;
                 console.log(`${computerCount} Computer's total value with 4 cards`)
-            } else if(computerCount > 21 && computerCount < playerCount){ // If computer is still under 21, draw 2nd card
 
+            } else if (computerCount > 21) {
                 function endGame() {
                     const h3 = document.createElement("h3"); // h3
                     h3.setAttribute('id', 'endGameText')
@@ -2616,22 +2616,61 @@ function startGame(){
                     h3.appendChild(h3Text);
                     const element8 = document.getElementById("inGameContainer");
                     element8.appendChild(h3);
-    
+
                     const restartButton = document.createElement("button");
                     restartButton.setAttribute('id', 'restartButton');
                     const restartButtonText = document.createTextNode("Restart");
                     restartButton.appendChild(restartButtonText);
                     const element9 = document.getElementById("inGameContainer");
                     element9.appendChild(restartButton);
-    
+
                     restartButton.addEventListener('click', startGame) // Hit button function
                 } // Else If Computer goes over 21
                 endGame()
-            }// Else If Computer goes over 21
+            } else if (computerCount < 21 && computerCount == playerCount) {
+                function endGame() {
+                    const h3 = document.createElement("h3"); // h3
+                    h3.setAttribute('id', 'endGameText')
+                    const h3Text = document.createTextNode("It is a draw.");
+                    h3.appendChild(h3Text);
+                    const element8 = document.getElementById("inGameContainer");
+                    element8.appendChild(h3);
+
+                    const restartButton = document.createElement("button");
+                    restartButton.setAttribute('id', 'restartButton');
+                    const restartButtonText = document.createTextNode("Restart");
+                    restartButton.appendChild(restartButtonText);
+                    const element9 = document.getElementById("inGameContainer");
+                    element9.appendChild(restartButton);
+
+                    restartButton.addEventListener('click', startGame) // Hit button function
+                }
+                endGame()
+            } else if (computerCount > playerCount) {
+                function endGame() {
+                    const h3 = document.createElement("h3"); // h3
+                    h3.setAttribute('id', 'endGameText')
+                    const h3Text = document.createTextNode("The Computer won! You lost this round.");
+                    h3.appendChild(h3Text);
+                    const element8 = document.getElementById("inGameContainer");
+                    element8.appendChild(h3);
+
+                    const restartButton = document.createElement("button");
+                    restartButton.setAttribute('id', 'restartButton');
+                    const restartButtonText = document.createTextNode("Restart");
+                    restartButton.appendChild(restartButtonText);
+                    const element9 = document.getElementById("inGameContainer");
+                    element9.appendChild(restartButton);
+
+                    restartButton.addEventListener('click', startGame) // Hit button function
+                }
+                endGame()
+            } 
+        } else if (computerCount < 21 && computerCount == playerCount) { // if(computerCount < playerCount && computerCount < 21) Statement
             function endGame() {
                 const h3 = document.createElement("h3"); // h3
                 h3.setAttribute('id', 'endGameText')
-                const h3Text = document.createTextNode("The Computer Busted!  You win!");
+                const h3Text = document.createTextNode("It is a draw. Try again?");
                 h3.appendChild(h3Text);
                 const element8 = document.getElementById("inGameContainer");
                 element8.appendChild(h3);
@@ -2644,11 +2683,32 @@ function startGame(){
                 element9.appendChild(restartButton);
 
                 restartButton.addEventListener('click', startGame) // Hit button function
-            } // Else If Computer goes over 21
+            }
             endGame()
-        } // if(computerCount < playerCount && computerCount < 21) Statement
+        } else if (computerCount < 21 && computerCount > playerCount) {
+            function endGame() {
+                const h3 = document.createElement("h3"); // h3
+                h3.setAttribute('id', 'endGameText')
+                const h3Text = document.createTextNode("The Computer won. You lost this round.");
+                h3.appendChild(h3Text);
+                const element8 = document.getElementById("inGameContainer");
+                element8.appendChild(h3);
+
+                const restartButton = document.createElement("button");
+                restartButton.setAttribute('id', 'restartButton');
+                const restartButtonText = document.createTextNode("Restart");
+                restartButton.appendChild(restartButtonText);
+                const element9 = document.getElementById("inGameContainer");
+                element9.appendChild(restartButton);
+
+                restartButton.addEventListener('click', startGame) // Hit button function
+            }
+            endGame()
+        }
     } // Stay Function
 } // Start Game Function
+
+
 
 //////////////////////////////////////////////////////////////////////////////////
 ///   NEED HELP WITH   ///
