@@ -167,11 +167,11 @@ h1.appendChild(h1Text);
 const element1 = document.getElementById("headerContainer");
 element1.appendChild(h1);
 
-const h4 = document.createElement("h4"); // h4 RULES
-const h4Text = document.createTextNode("Rules: Blackjack hands are scored by their point total. The hand with the highest total wins as long as it doesn't exceed 21; a hand with a higher total than 21 is said to bust. You automatically lose. Cards 2 through 10 are worth their face value, and face cards (Jack, Queen, King) are also worth 10. Good luck!")
-h4.appendChild(h4Text);
+const h2 = document.createElement("h2"); // h2 RULES
+const h2Text = document.createTextNode("Rules: Blackjack hands are scored by their point total. The hand with the highest total wins as long as it doesn't exceed 21; a hand with a higher total than 21 is said to bust. You automatically lose. Cards 2 through 10 are worth their face value, and face cards (Jack, Queen, King) are also worth 10. Good luck!")
+h2.appendChild(h2Text);
 const element2 = document.getElementById("headerContainer");
-element2.appendChild(h4);
+element2.appendChild(h2);
 
 document.getElementById("headerContainer").style.textAlign = "center"; // CSS Center Text within headerContainer
 
@@ -231,6 +231,23 @@ function startGame(){
     console.log('addImage Function for the Displayed Deck is working') // Test if addImage Function is working
     };
     addDeck()
+
+
+
+    function addScoreBoareds(){
+        let scoreBoard1 = document.createElement('img');
+        scoreBoard1.src = 'assets/.scoreboard.jpg';
+        let id_name6 = 'scoreBoard1';
+        scoreBoard1.setAttribute("id", id_name6);
+        document.getElementById('inGameContainer').appendChild(scoreBoard1);
+
+        let scoreBoard2 = document.createElement('img');
+        scoreBoard2.src = 'assets/.scoreboard.jpg';
+        let id_name7 = 'scoreBoard2';
+        scoreBoard2.setAttribute("id", id_name7);
+        document.getElementById('inGameContainer').appendChild(scoreBoard2);
+    }
+    addScoreBoareds()
 
 
 
@@ -558,6 +575,16 @@ function startGame(){
         document.getElementById('inGameContainer').appendChild(displayPlayerCard1);
     }
 
+    let playerCount = playerCard1.value;
+    console.log(playerCount) // Test if player count is adding up correctly
+
+    const h3PlayerScore = document.createElement("h3"); // h3 PLAYER DISPLAY COUNTER
+    h3PlayerScore.setAttribute('id', 'playerScore')
+    const h3Text1 = document.createTextNode(playerCount);
+    h3PlayerScore.appendChild(h3Text1);
+    const element4 = document.getElementById("inGameContainer");
+    element4.appendChild(h3PlayerScore);
+
     function dealCards2(deck){
         let randomCard = Math.floor(Math.random()*deck.length);
         let dealtCard2 = deck[randomCard];
@@ -567,7 +594,7 @@ function startGame(){
     let computerCard1 = dealCards2(deck);
     console.log(computerCard1) // Test if random card was selected
 
-    if(computerCard1.name == deck[0].name){ // PLAYER CARD 1
+    if(computerCard1.name == deck[0].name){ // COMPUTER CARD 1
         let displayComputerCard1 = document.createElement('img');
         displayComputerCard1.src = 'assets/AC.png';
         let id_name6 = 'displayComputerCard1';
@@ -881,6 +908,16 @@ function startGame(){
         document.getElementById('inGameContainer').appendChild(displayComputerCard1);
     }
 
+    let computerCount = computerCard1.value;
+    console.log(computerCount) // Test if computer count is adding up correctly
+
+    const h3ComputerScore = document.createElement("h3"); // h3 COMPUTER DISPLAY COUNTER
+    h3ComputerScore.setAttribute('id', 'computerScore')
+    const h3Text2 = document.createTextNode(computerCount);
+    h3ComputerScore.appendChild(h3Text2);
+    const element5 = document.getElementById("inGameContainer");
+    element5.appendChild(h3ComputerScore);
+
     function dealCards3(deck){
         let randomCard = Math.floor(Math.random()*deck.length);
         let dealtCard3 = deck[randomCard];
@@ -890,7 +927,7 @@ function startGame(){
     let playerCard2 = dealCards3(deck);
     console.log(playerCard2) // Test if random card was selected
 
-    if(playerCard2.name == deck[0].name){ // PLAYER CARD 1
+    if(playerCard2.name == deck[0].name){ // PLAYER CARD 2
         let displayPlayerCard2 = document.createElement('img');
         displayPlayerCard2.src = 'assets/AC.png';
         let id_name6 = 'displayPlayerCard2';
@@ -1204,6 +1241,11 @@ function startGame(){
         document.getElementById('inGameContainer').appendChild(displayPlayerCard2);
     }
 
+    playerCount += playerCard2.value;
+    console.log(playerCount) // Test if player count is adding up correctly
+
+
+
     function dealCards4(deck){
         let randomCard = Math.floor(Math.random()*deck.length);
         let dealtCard4 = deck[randomCard];
@@ -1213,7 +1255,7 @@ function startGame(){
     let computerCard2 = dealCards4(deck);
     console.log(computerCard2) // Test if random card was selected
 
-    if(computerCard2.name == deck[0].name){ // PLAYER CARD 1
+    if(computerCard2.name == deck[0].name){ // COMPUTER CARD 2
         let displayComputerCard2 = document.createElement('img');
         displayComputerCard2.src = 'assets/AC.png';
         let id_name6 = 'displayComputerCard2';
@@ -1535,6 +1577,12 @@ function startGame(){
     
     console.log('addImage Function for the Displayed Deck is working'); // Test if addImage Function is working
     
+    playerCount += playerCard2.value;
+    console.log(playerCount) // Test if player count is adding up correctly
+
+    computerCount +=computerCard2.value;
+    console.log(computerCard1.value) // Test if computer count is adding up correctly
+
 }
 
 
