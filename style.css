@@ -235,6 +235,16 @@ h2{
     transition-duration: 3s;
     box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
 }
+/*------------------------------------------------------HIT SCREEN*/
+/*------------------------------------------------------STAY SCREEN*/
+#displayStayCard1{
+    position: absolute;
+    top: 100px;
+    left: 850px;
+    width: 225px;
+    height: 315px;
+    opacity: 0;
+}
 /*------------------------------------------------------END GAME SCREEN*/
 #endGameText{
     position: absolute;
