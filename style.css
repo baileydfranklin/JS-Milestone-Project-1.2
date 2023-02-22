@@ -122,19 +122,6 @@ h2{
     height: 315px;
     box-shadow: 10px 10px 20px 4px rgba(0,0,0,1);
 }
-/*------------------------------------------------------DISPLAYED CARDS AFTER GAME SET UP*/ 
-#displayHitCard1{
-    position: absolute;
-    top: 650px;
-    left: 1125px;
-    box-shadow: 10px 10px 20px 4px rgba(0,0,0,1);
-}
-#displayHitCard2{
-    position: absolute;
-    top: 650px;
-    left: 1375px;
-    box-shadow: 10px 10px 20px 4px rgba(0,0,0,1);
-}
 /*------------------------------------------------------SCORE BOARD*/
 #scoreBoard1{
     position: absolute;
@@ -190,6 +177,90 @@ h2{
     border: solid 3px #CD853F;
     color: #FFFFFF;
 }
+#deleteHitButton1{
+    position: absolute;
+    top: 500px;
+    left: 575px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: solid 3px black;
+    font-size: 200%;
+    background-color: #CD853F;
+    position: relative;
+    font-size: 28px; 
+    padding: 20px;
+    width: 200px;
+    transition-duration: 0.5s;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+    opacity: 0;
+}
+#hitButton2{
+    position: absolute;
+    top: 500px;
+    left: 175px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: solid 3px black;
+    font-size: 200%;
+    background-color: #CD853F;
+    position: relative;
+    font-size: 28px; 
+    padding: 20px;
+    width: 200px;
+    transition-duration: 0.5s;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+}
+#hitButton2:hover{
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 00px;
+    background-color: #006400;
+    border: solid 3px #CD853F;
+    color: #FFFFFF;
+}
+#deleteHitButton2{
+    position: absolute;
+    top: 500px;
+    left: 175px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: solid 3px black;
+    font-size: 200%;
+    background-color: #CD853F;
+    position: relative;
+    font-size: 28px; 
+    padding: 20px;
+    width: 200px;
+    transition-duration: 0.5s;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+    opacity: 0;
+}
+#hitButton3{
+    position: absolute;
+    top: 500px;
+    left: -25px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: solid 3px black;
+    font-size: 200%;
+    background-color: #CD853F;
+    position: relative;
+    font-size: 28px; 
+    padding: 20px;
+    width: 200px;
+    transition-duration: 0.5s;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+}
+#hitButton3:hover{
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 00px;
+    background-color: #006400;
+    border: solid 3px #CD853F;
+    color: #FFFFFF;
+}
 #stayButton{
     position: absolute;
     top: 500px;
@@ -235,6 +306,24 @@ h2{
     box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
 }
 /*------------------------------------------------------HIT SCREEN*/
+#displayHitCard1{
+    position: absolute;
+    top: 650px;
+    left: 1125px;
+    box-shadow: 10px 10px 20px 4px rgba(0,0,0,1);
+}
+#displayHitCard2{
+    position: absolute;
+    top: 650px;
+    left: 1400px;
+    box-shadow: 10px 10px 20px 4px rgba(0,0,0,1);
+}
+#displayHitCard3{
+    position: absolute;
+    top: 650px;
+    left: 1675px;
+    box-shadow: 10px 10px 20px 4px rgba(0,0,0,1);
+}
 /*------------------------------------------------------STAY SCREEN*/
 #displayStayCard1{
     position: absolute;

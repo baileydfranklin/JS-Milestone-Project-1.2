@@ -1577,16 +1577,16 @@ function startGame(){
 
     console.log('addImage Function for the Displayed Deck is working'); // Test if addImage Function is working
 
-    //////////     GAME PLAY / PLAYER'S TURN     //////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////     GAME PLAY / PLAYER'S TURN STARTS HERE     //////////////////////////////////////////////////////////////////////////////////////////////////////
 
     const hitButton = document.createElement("button");
     hitButton.setAttribute('id', 'hitButton');
-    const hitButtonText = document.createTextNode("Hit (me)");
+    const hitButtonText = document.createTextNode("Hit");
     hitButton.appendChild(hitButtonText);
     const element6 = document.getElementById("inGameContainer");
     element6.appendChild(hitButton);
 
-    hitButton.addEventListener('click', hit) // Hit button function
+    hitButton.addEventListener('click', hit) // HIT BUTTON EVENT LISTENER
 
     const stayButton = document.createElement("button");
     stayButton.setAttribute('id', 'stayButton');
@@ -1595,7 +1595,7 @@ function startGame(){
     const element7 = document.getElementById("inGameContainer");
     element7.appendChild(stayButton);
 
-    stayButton.addEventListener('click', stay) // Stay button function
+    stayButton.addEventListener('click', stay) // STAY BUTTON EVENT LISTENER
 
     function hit() {
         function dealHit1(deck) {
@@ -1922,11 +1922,9 @@ function startGame(){
         }
 
         playerCount += hitCard1.value; // Player's total hand value after hit 1
-        console.log(`${playerCount} Player's hand value after hit 1`); // Display player's total hand value after hit 1
+        console.log(`${playerCount} Player's hand value after hit 1`); 
 
         if (playerCount > 21) {
-            hitButton.style.backgroundColor = 'gray'
-            hitButton.setAttribute('id', 'bustHitButton')
 
             function endGame() {
                 const h3 = document.createElement("h3"); // h3
@@ -1946,998 +1944,1817 @@ function startGame(){
                 restartButton.addEventListener('click', startGame) // Hit button function
             }
             endGame()
-        }
-    }
-    function stay() {
-        computerHiddenCard.setAttribute('id', 'displayStayCard1')
+        }else if(playerCount < 21){
 
-        computerCount += computerCard2.value;
-        console.log(`${computerCount} Computer's total after second card is Flipped`)
+            hitButton.setAttribute('id', 'deleteHitButton1')
 
-        if (computerCount < playerCount && computerCount < 21) {
-            function dealStay1(deck) {
-                let randomCard = Math.floor(Math.random() * deck.length);
-                let dealStay1 = deck[randomCard];
+            const hitButton2 = document.createElement("button");
+            hitButton2.setAttribute('id', 'hitButton2');
+            const hitButton2Text = document.createTextNode("Hit2");
+            hitButton2.appendChild(hitButton2Text);
+            const element6 = document.getElementById("inGameContainer");
+            element6.appendChild(hitButton2);
+        
+            hitButton2.addEventListener('click', hit2) // HIT BUTTON EVENT LISTENER
 
-                return dealStay1;
-            }
-            let stayCard1 = dealStay1(deck);
-            console.log(stayCard1) // Test if random card was selected
-
-            if (stayCard1.name == deck[0].name) { // STAY FUNCTION
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/AC.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[1].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/2C.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[2].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/3C.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[3].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/4C.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[4].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/5C.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[5].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/6C.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[6].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/7C.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[7].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/8C.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[8].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/9C.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[9].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/10C.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[10].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/JC.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[11].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/QC.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[12].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/KC.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[13].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/AD.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[14].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/2D.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[15].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/3D.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[16].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/4D.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[17].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/5D.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[18].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/6D.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[19].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/7D.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[20].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/8D.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[21].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/9D.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[22].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/10D.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[23].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/JD.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[24].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/QD.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[25].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/KD.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[26].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/AH.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[27].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/2H.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[28].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/3H.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[29].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/4H.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[30].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/5H.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[31].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/6H.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[32].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/7H.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[33].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/8H.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[34].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/9H.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[35].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/10H.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[36].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/JH.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[37].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/QH.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[38].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/KH.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[39].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/AS.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[40].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/2S.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[41].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/3S.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[42].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/4S.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[43].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/5S.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[44].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/6S.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[45].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/7S.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[46].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/8S.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[47].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/9S.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[48].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/10S.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[49].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/JS.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[50].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/QS.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            } else if (stayCard1.name == deck[51].name) {
-                let displayStayCard2 = document.createElement('img');
-                displayStayCard2.src = 'assets/QS.png';
-                let id_name6 = 'displayStayCard2';
-                displayStayCard2.setAttribute("id", id_name6);
-                document.getElementById('inGameContainer').appendChild(displayStayCard2);
-            }
-
-            computerCount += stayCard1.value;
-            console.log(`${computerCount} Computer's total value with 3 cards`)
-
-            if (computerCount < 21 && computerCount < playerCount) {
-                function dealStay2(deck) {
+            function hit2(){
+                function dealHit2(deck) {
                     let randomCard = Math.floor(Math.random() * deck.length);
-                    let dealStay2 = deck[randomCard];
-
-                    return dealStay2;
+                    let dealHit2 = deck[randomCard];
+        
+                    return dealHit2;
                 }
-                let stayCard2 = dealStay2(deck);
-                console.log(stayCard2) // Test if random card was selected
-
-                if (stayCard2.name == deck[0].name) { // STAY FUNCTION
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/AC.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[1].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/2C.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[2].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/3C.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[3].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/4C.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[4].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/5C.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[5].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/6C.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[6].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/7C.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[7].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/8C.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[8].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/9C.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[9].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/10C.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[10].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/JC.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[11].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/QC.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[12].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/KC.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[13].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/AD.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[14].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/2D.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[15].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/3D.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[16].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/4D.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[17].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/5D.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[18].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/6D.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[19].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/7D.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[20].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/8D.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[21].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/9D.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[22].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/10D.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[23].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/JD.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[24].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/QD.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[25].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/KD.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[26].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/AH.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[27].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/2H.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[28].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/3H.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[29].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/4H.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[30].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/5H.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[31].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/6H.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[32].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/7H.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[33].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/8H.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[34].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/9H.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[35].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/10H.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[36].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/JH.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[37].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/QH.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[38].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/KH.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[39].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/AS.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[40].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/2S.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[41].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/3S.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[42].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/4S.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[43].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/5S.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[44].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/6S.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[45].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/7S.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[46].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/8S.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[47].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/9S.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[48].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/10S.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[49].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/JS.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[50].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/QS.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
-                } else if (stayCard2.name == deck[51].name) {
-                    let displayStayCard3 = document.createElement('img');
-                    displayStayCard3.src = 'assets/QS.png';
-                    let id_name6 = 'displayStayCard3';
-                    displayStayCard3.setAttribute("id", id_name6);
-                    document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                let hitCard2 = dealHit2(deck);
+                console.log(hitCard2) // Test if random card was selected
+        
+                if (hitCard2.name == deck[0].name) { // HIT FUNCTION
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/AC.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[1].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/2C.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[2].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/3C.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[3].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/4C.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[4].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/5C.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[5].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/6C.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[6].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/7C.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[7].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/8C.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[8].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/9C.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[9].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/10C.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[10].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/JC.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[11].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/QC.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[12].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/KC.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[13].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/AD.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[14].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/2D.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[15].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/3D.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[16].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/4D.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[17].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/5D.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[18].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/6D.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[19].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/7D.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[20].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/8D.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[21].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/9D.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[22].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/10D.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[23].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/JD.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[24].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/QD.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[25].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/KD.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[26].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/AH.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[27].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/2H.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[28].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/3H.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[29].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/4H.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[30].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/5H.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[31].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/6H.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[32].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/7H.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[33].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/8H.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[34].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/9H.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[35].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/10H.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[36].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/JH.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[37].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/QH.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[38].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/KH.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[39].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/AS.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[40].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/2S.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[41].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/3S.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[42].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/4S.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[43].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/5S.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[44].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/6S.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[45].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/7S.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[46].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/8S.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[47].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/9S.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[48].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/10S.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[49].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/JS.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[50].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/QS.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
+                } else if (hitCard2.name == deck[51].name) {
+                    let displayHitCard2 = document.createElement('img');
+                    displayHitCard2.src = 'assets/QS.png';
+                    let id_name6 = 'displayHitCard2';
+                    displayHitCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayHitCard2);
                 }
 
-                computerCount += stayCard2.value;
-                console.log(`${computerCount} Computer's total value with 4 cards`)
+                playerCount += hitCard2.value; // Player's total hand value after hit 1
+                console.log(`${playerCount} Player's hand value after hit 2`);
 
-                if(computerCount < 21 && computerCount < playerCount){
-                    function dealStay3(deck) {
+                if (playerCount > 21) {
+                    function endGame() {
+                        const h3 = document.createElement("h3"); // h3
+                        h3.setAttribute('id', 'endGameText')
+                        const h3Text = document.createTextNode("BUST! You lose.");
+                        h3.appendChild(h3Text);
+                        const element8 = document.getElementById("inGameContainer");
+                        element8.appendChild(h3);
+
+                        const restartButton = document.createElement("button");
+                        restartButton.setAttribute('id', 'restartButton');
+                        const restartButtonText = document.createTextNode("Restart");
+                        restartButton.appendChild(restartButtonText);
+                        const element9 = document.getElementById("inGameContainer");
+                        element9.appendChild(restartButton);
+
+                        restartButton.addEventListener('click', startGame) // Hit button function
+                    }
+                    endGame()
+                }else if(playerCount > 21){
+                    function endGame() {
+                        const h3 = document.createElement("h3"); // h3
+                        h3.setAttribute('id', 'endGameText')
+                        const h3Text = document.createTextNode("BUST! You lose.");
+                        h3.appendChild(h3Text);
+                        const element8 = document.getElementById("inGameContainer");
+                        element8.appendChild(h3);
+
+                        const restartButton = document.createElement("button");
+                        restartButton.setAttribute('id', 'restartButton');
+                        const restartButtonText = document.createTextNode("Restart");
+                        restartButton.appendChild(restartButtonText);
+                        const element9 = document.getElementById("inGameContainer");
+                        element9.appendChild(restartButton);
+
+                        restartButton.addEventListener('click', startGame) // Hit button function
+                    }
+                    endGame()
+                }else if (playerCount < 21) { }
+                hitButton2.setAttribute('id', 'deleteHitButton2')
+
+                const hitButton3 = document.createElement("button");
+                hitButton3.setAttribute('id', 'hitButton3');
+                const hitButton3Text = document.createTextNode("Hit3");
+                hitButton3.appendChild(hitButton3Text);
+                const element6 = document.getElementById("inGameContainer");
+                element6.appendChild(hitButton3);
+
+                hitButton3.addEventListener('click', hit3) // HIT BUTTON EVENT LISTENER
+
+                function hit3(){
+                    function dealHit3(deck) {
                         let randomCard = Math.floor(Math.random() * deck.length);
-                        let dealStay3 = deck[randomCard];
-    
-                        return dealStay3;
+                        let dealHit3 = deck[randomCard];
+            
+                        return dealHit3;
                     }
-                    let stayCard3 = dealStay2(deck);
-                    console.log(stayCard3) // Test if random card was selected
-    
-                    if (stayCard3.name == deck[0].name) { // STAY FUNCTION
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/AC.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[1].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/2C.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[2].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/3C.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[3].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/4C.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[4].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/5C.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[5].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/6C.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[6].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/7C.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[7].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/8C.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[8].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/9C.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[9].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/10C.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[10].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/JC.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[11].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/QC.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[12].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/KC.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[13].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/AD.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[14].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/2D.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[15].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/3D.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[16].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/4D.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[17].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/5D.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[18].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/6D.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[19].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/7D.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[20].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/8D.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[21].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/9D.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[22].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/10D.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[23].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/JD.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[24].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/QD.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[25].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/KD.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[26].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/AH.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[27].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/2H.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[28].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/3H.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[29].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/4H.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[30].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/5H.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[31].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/6H.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[32].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/7H.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[33].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/8H.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[34].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/9H.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[35].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/10H.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[36].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/JH.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[37].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/QH.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[38].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/KH.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[39].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/AS.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[40].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/2S.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[41].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/3S.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[42].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/4S.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[43].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/5S.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[44].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/6S.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[45].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/7S.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[46].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/8S.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[47].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/9S.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[48].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/10S.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[49].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/JS.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[50].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/QS.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    } else if (stayCard3.name == deck[51].name) {
-                        let displayStayCard4 = document.createElement('img');
-                        displayStayCard4.src = 'assets/QS.png';
-                        let id_name6 = 'displayStayCard4';
-                        displayStayCard4.setAttribute("id", id_name6);
-                        document.getElementById('inGameContainer').appendChild(displayStayCard4);
-                    }
-    
-                    computerCount += stayCard3.value;
-                    console.log(`${computerCount} Computer's total value with 5 cards`)
+                    let hitCard3 = dealHit3(deck);
+                    console.log(hitCard3) // Test if random card was selected
 
-                    if(computerCount < 21 && computerCount < playerCount){
-                        // Code is here for computer to draw 6th card. Very unlikely though.
-                    }else if(computerCount < 21 && computerCount > playerCount){
+                    if (hitCard3.name == deck[0].name) { // HIT FUNCTION
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/AC.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[1].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/2C.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[2].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/3C.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[3].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/4C.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[4].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/5C.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[5].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/6C.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[6].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/7C.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[7].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/8C.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[8].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/9C.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[9].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/10C.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[10].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/JC.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[11].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/QC.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[12].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/KC.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[13].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/AD.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[14].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/2D.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[15].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/3D.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[16].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/4D.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[17].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/5D.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[18].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/6D.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[19].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/7D.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[20].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/8D.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[21].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/9D.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[22].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/10D.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[23].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/JD.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[24].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/QD.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[25].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/KD.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[26].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/AH.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[27].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/2H.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[28].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/3H.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[29].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/4H.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[30].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/5H.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[31].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/6H.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[32].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/7H.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[33].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/8H.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[34].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/9H.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[35].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/10H.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[36].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/JH.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[37].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/QH.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[38].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/KH.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[39].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/AS.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[40].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/2S.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[41].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/3S.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[42].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/4S.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[43].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/5S.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[44].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/6S.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[45].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/7S.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[46].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/8S.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[47].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/9S.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[48].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/10S.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[49].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/JS.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[50].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/QS.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    } else if (hitCard3.name == deck[51].name) {
+                        let displayHitCard3 = document.createElement('img');
+                        displayHitCard3.src = 'assets/QS.png';
+                        let id_name6 = 'displayHitCard3';
+                        displayHitCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayHitCard3);
+                    }
+
+                    playerCount += hitCard3.value; // Player's total hand value after hit 1
+                    console.log(`${playerCount} Player's hand value after hit 2`);
+
+                    if(playerCount > 21){
+                        function endGame() {
+                            const h3 = document.createElement("h3"); // h3
+                            h3.setAttribute('id', 'endGameText')
+                            const h3Text = document.createTextNode("BUST! You lose.");
+                            h3.appendChild(h3Text);
+                            const element8 = document.getElementById("inGameContainer");
+                            element8.appendChild(h3);
+    
+                            const restartButton = document.createElement("button");
+                            restartButton.setAttribute('id', 'restartButton');
+                            const restartButtonText = document.createTextNode("Restart");
+                            restartButton.appendChild(restartButtonText);
+                            const element9 = document.getElementById("inGameContainer");
+                            element9.appendChild(restartButton);
+    
+                            restartButton.addEventListener('click', startGame) // Hit button function
+                        }
+                        endGame()
+                    }else if(playerCount < 21){
+                        // Add code to hit again. Hopefully I don't need to add this
+                    }
+                }// HIT 3 FUNTION
+            } // HIT2 FUNCTION
+        }// IF ELSE STATEMENTS FOR HIT1 FUNCTION
+    }// HIT1 FUNCTION
+        function stay() {
+            computerHiddenCard.setAttribute('id', 'displayStayCard1')
+
+            computerCount += computerCard2.value;
+            console.log(`${computerCount} Computer's total after second card is Flipped`)
+
+            if (computerCount < playerCount && computerCount < 21) {
+                function dealStay1(deck) {
+                    let randomCard = Math.floor(Math.random() * deck.length);
+                    let dealStay1 = deck[randomCard];
+
+                    return dealStay1;
+                }
+                let stayCard1 = dealStay1(deck);
+                console.log(stayCard1) // Test if random card was selected
+
+                if (stayCard1.name == deck[0].name) { // STAY FUNCTION
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/AC.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[1].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/2C.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[2].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/3C.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[3].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/4C.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[4].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/5C.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[5].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/6C.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[6].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/7C.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[7].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/8C.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[8].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/9C.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[9].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/10C.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[10].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/JC.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[11].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/QC.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[12].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/KC.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[13].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/AD.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[14].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/2D.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[15].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/3D.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[16].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/4D.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[17].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/5D.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[18].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/6D.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[19].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/7D.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[20].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/8D.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[21].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/9D.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[22].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/10D.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[23].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/JD.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[24].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/QD.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[25].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/KD.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[26].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/AH.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[27].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/2H.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[28].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/3H.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[29].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/4H.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[30].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/5H.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[31].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/6H.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[32].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/7H.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[33].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/8H.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[34].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/9H.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[35].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/10H.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[36].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/JH.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[37].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/QH.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[38].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/KH.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[39].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/AS.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[40].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/2S.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[41].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/3S.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[42].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/4S.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[43].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/5S.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[44].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/6S.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[45].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/7S.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[46].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/8S.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[47].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/9S.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[48].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/10S.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[49].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/JS.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[50].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/QS.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                } else if (stayCard1.name == deck[51].name) {
+                    let displayStayCard2 = document.createElement('img');
+                    displayStayCard2.src = 'assets/QS.png';
+                    let id_name6 = 'displayStayCard2';
+                    displayStayCard2.setAttribute("id", id_name6);
+                    document.getElementById('inGameContainer').appendChild(displayStayCard2);
+                }
+
+                computerCount += stayCard1.value;
+                console.log(`${computerCount} Computer's total value with 3 cards`)
+
+                if (computerCount < 21 && computerCount < playerCount) {
+                    function dealStay2(deck) {
+                        let randomCard = Math.floor(Math.random() * deck.length);
+                        let dealStay2 = deck[randomCard];
+
+                        return dealStay2;
+                    }
+                    let stayCard2 = dealStay2(deck);
+                    console.log(stayCard2) // Test if random card was selected
+
+                    if (stayCard2.name == deck[0].name) { // STAY FUNCTION
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/AC.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[1].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/2C.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[2].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/3C.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[3].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/4C.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[4].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/5C.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[5].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/6C.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[6].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/7C.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[7].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/8C.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[8].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/9C.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[9].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/10C.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[10].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/JC.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[11].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/QC.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[12].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/KC.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[13].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/AD.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[14].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/2D.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[15].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/3D.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[16].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/4D.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[17].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/5D.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[18].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/6D.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[19].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/7D.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[20].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/8D.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[21].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/9D.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[22].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/10D.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[23].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/JD.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[24].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/QD.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[25].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/KD.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[26].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/AH.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[27].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/2H.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[28].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/3H.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[29].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/4H.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[30].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/5H.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[31].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/6H.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[32].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/7H.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[33].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/8H.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[34].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/9H.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[35].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/10H.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[36].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/JH.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[37].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/QH.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[38].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/KH.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[39].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/AS.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[40].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/2S.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[41].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/3S.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[42].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/4S.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[43].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/5S.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[44].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/6S.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[45].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/7S.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[46].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/8S.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[47].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/9S.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[48].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/10S.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[49].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/JS.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[50].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/QS.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    } else if (stayCard2.name == deck[51].name) {
+                        let displayStayCard3 = document.createElement('img');
+                        displayStayCard3.src = 'assets/QS.png';
+                        let id_name6 = 'displayStayCard3';
+                        displayStayCard3.setAttribute("id", id_name6);
+                        document.getElementById('inGameContainer').appendChild(displayStayCard3);
+                    }
+
+                    computerCount += stayCard2.value;
+                    console.log(`${computerCount} Computer's total value with 4 cards`)
+
+                    if (computerCount < 21 && computerCount < playerCount) {
+                        function dealStay3(deck) {
+                            let randomCard = Math.floor(Math.random() * deck.length);
+                            let dealStay3 = deck[randomCard];
+
+                            return dealStay3;
+                        }
+                        let stayCard3 = dealStay2(deck);
+                        console.log(stayCard3) // Test if random card was selected
+
+                        if (stayCard3.name == deck[0].name) { // STAY FUNCTION
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/AC.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[1].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/2C.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[2].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/3C.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[3].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/4C.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[4].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/5C.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[5].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/6C.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[6].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/7C.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[7].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/8C.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[8].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/9C.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[9].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/10C.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[10].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/JC.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[11].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/QC.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[12].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/KC.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[13].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/AD.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[14].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/2D.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[15].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/3D.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[16].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/4D.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[17].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/5D.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[18].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/6D.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[19].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/7D.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[20].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/8D.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[21].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/9D.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[22].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/10D.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[23].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/JD.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[24].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/QD.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[25].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/KD.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[26].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/AH.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[27].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/2H.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[28].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/3H.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[29].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/4H.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[30].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/5H.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[31].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/6H.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[32].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/7H.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[33].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/8H.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[34].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/9H.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[35].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/10H.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[36].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/JH.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[37].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/QH.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[38].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/KH.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[39].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/AS.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[40].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/2S.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[41].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/3S.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[42].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/4S.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[43].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/5S.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[44].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/6S.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[45].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/7S.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[46].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/8S.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[47].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/9S.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[48].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/10S.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[49].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/JS.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[50].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/QS.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        } else if (stayCard3.name == deck[51].name) {
+                            let displayStayCard4 = document.createElement('img');
+                            displayStayCard4.src = 'assets/QS.png';
+                            let id_name6 = 'displayStayCard4';
+                            displayStayCard4.setAttribute("id", id_name6);
+                            document.getElementById('inGameContainer').appendChild(displayStayCard4);
+                        }
+
+                        computerCount += stayCard3.value;
+                        console.log(`${computerCount} Computer's total value with 5 cards`)
+
+                        if (computerCount < 21 && computerCount < playerCount) {
+                            // Code is here for computer to draw 6th card. Very unlikely though.
+                        } else if (computerCount < 21 && computerCount > playerCount) {
+                            function endGame() {
+                                const h3 = document.createElement("h3"); // h3
+                                h3.setAttribute('id', 'endGameText')
+                                const h3Text = document.createTextNode("The Computer won! You lost this round.");
+                                h3.appendChild(h3Text);
+                                const element8 = document.getElementById("inGameContainer");
+                                element8.appendChild(h3);
+
+                                const restartButton = document.createElement("button");
+                                restartButton.setAttribute('id', 'restartButton');
+                                const restartButtonText = document.createTextNode("Restart");
+                                restartButton.appendChild(restartButtonText);
+                                const element9 = document.getElementById("inGameContainer");
+                                element9.appendChild(restartButton);
+
+                                restartButton.addEventListener('click', startGame) // Hit button function
+                            }
+                            endGame()
+                        } else if (computerCount < 21 && computerCount == playerCount) {
+                            function endGame() {
+                                const h3 = document.createElement("h3"); // h3
+                                h3.setAttribute('id', 'endGameText')
+                                const h3Text = document.createTextNode("It is a draw.");
+                                h3.appendChild(h3Text);
+                                const element8 = document.getElementById("inGameContainer");
+                                element8.appendChild(h3);
+
+                                const restartButton = document.createElement("button");
+                                restartButton.setAttribute('id', 'restartButton');
+                                const restartButtonText = document.createTextNode("Restart");
+                                restartButton.appendChild(restartButtonText);
+                                const element9 = document.getElementById("inGameContainer");
+                                element9.appendChild(restartButton);
+
+                                restartButton.addEventListener('click', startGame) // Hit button function
+                            }
+                            endGame()
+                        } else if (computerCount == 21) {
+                            function endGame() {
+                                const h3 = document.createElement("h3"); // h3
+                                h3.setAttribute('id', 'endGameText')
+                                const h3Text = document.createTextNode("The Computer won! You lost this round.");
+                                h3.appendChild(h3Text);
+                                const element8 = document.getElementById("inGameContainer");
+                                element8.appendChild(h3);
+
+                                const restartButton = document.createElement("button");
+                                restartButton.setAttribute('id', 'restartButton');
+                                const restartButtonText = document.createTextNode("Restart");
+                                restartButton.appendChild(restartButtonText);
+                                const element9 = document.getElementById("inGameContainer");
+                                element9.appendChild(restartButton);
+
+                                restartButton.addEventListener('click', startGame) // Hit button function
+                            }
+                            endGame()
+                        } else if (computerCount > 21) {
+                            function endGame() {
+                                const h3 = document.createElement("h3"); // h3
+                                h3.setAttribute('id', 'endGameText')
+                                const h3Text = document.createTextNode("The Computer Busted!  You win!");
+                                h3.appendChild(h3Text);
+                                const element8 = document.getElementById("inGameContainer");
+                                element8.appendChild(h3);
+
+                                const restartButton = document.createElement("button");
+                                restartButton.setAttribute('id', 'restartButton');
+                                const restartButtonText = document.createTextNode("Restart");
+                                restartButton.appendChild(restartButtonText);
+                                const element9 = document.getElementById("inGameContainer");
+                                element9.appendChild(restartButton);
+
+                                restartButton.addEventListener('click', startGame) // Hit button function
+                            } // Else If Computer goes over 21
+                            endGame()
+                        }
+
+                    } else if (computerCount < 21 && computerCount > playerCount) {
                         function endGame() {
                             const h3 = document.createElement("h3"); // h3
                             h3.setAttribute('id', 'endGameText')
@@ -2945,18 +3762,18 @@ function startGame(){
                             h3.appendChild(h3Text);
                             const element8 = document.getElementById("inGameContainer");
                             element8.appendChild(h3);
-        
+
                             const restartButton = document.createElement("button");
                             restartButton.setAttribute('id', 'restartButton');
                             const restartButtonText = document.createTextNode("Restart");
                             restartButton.appendChild(restartButtonText);
                             const element9 = document.getElementById("inGameContainer");
                             element9.appendChild(restartButton);
-        
+
                             restartButton.addEventListener('click', startGame) // Hit button function
                         }
                         endGame()
-                    }else if(computerCount < 21 && computerCount == playerCount){
+                    } else if (computerCount == playerCount) {
                         function endGame() {
                             const h3 = document.createElement("h3"); // h3
                             h3.setAttribute('id', 'endGameText')
@@ -2964,37 +3781,18 @@ function startGame(){
                             h3.appendChild(h3Text);
                             const element8 = document.getElementById("inGameContainer");
                             element8.appendChild(h3);
-        
+
                             const restartButton = document.createElement("button");
                             restartButton.setAttribute('id', 'restartButton');
                             const restartButtonText = document.createTextNode("Restart");
                             restartButton.appendChild(restartButtonText);
                             const element9 = document.getElementById("inGameContainer");
                             element9.appendChild(restartButton);
-        
+
                             restartButton.addEventListener('click', startGame) // Hit button function
                         }
                         endGame()
-                    }else if(computerCount == 21){
-                        function endGame() {
-                            const h3 = document.createElement("h3"); // h3
-                            h3.setAttribute('id', 'endGameText')
-                            const h3Text = document.createTextNode("The Computer won! You lost this round.");
-                            h3.appendChild(h3Text);
-                            const element8 = document.getElementById("inGameContainer");
-                            element8.appendChild(h3);
-        
-                            const restartButton = document.createElement("button");
-                            restartButton.setAttribute('id', 'restartButton');
-                            const restartButtonText = document.createTextNode("Restart");
-                            restartButton.appendChild(restartButtonText);
-                            const element9 = document.getElementById("inGameContainer");
-                            element9.appendChild(restartButton);
-        
-                            restartButton.addEventListener('click', startGame) // Hit button function
-                        }
-                        endGame()
-                    }else if(computerCount > 21){
+                    } else if (computerCount > 21) {
                         function endGame() {
                             const h3 = document.createElement("h3"); // h3
                             h3.setAttribute('id', 'endGameText')
@@ -3002,58 +3800,39 @@ function startGame(){
                             h3.appendChild(h3Text);
                             const element8 = document.getElementById("inGameContainer");
                             element8.appendChild(h3);
-        
+
                             const restartButton = document.createElement("button");
                             restartButton.setAttribute('id', 'restartButton');
                             const restartButtonText = document.createTextNode("Restart");
                             restartButton.appendChild(restartButtonText);
                             const element9 = document.getElementById("inGameContainer");
                             element9.appendChild(restartButton);
-        
+
                             restartButton.addEventListener('click', startGame) // Hit button function
                         } // Else If Computer goes over 21
                         endGame()
+                    } else if (computerCount == 21) {
+                        function endGame() {
+                            const h3 = document.createElement("h3"); // h3
+                            h3.setAttribute('id', 'endGameText')
+                            const h3Text = document.createTextNode("The Computer won! You lost this round.");
+                            h3.appendChild(h3Text);
+                            const element8 = document.getElementById("inGameContainer");
+                            element8.appendChild(h3);
+
+                            const restartButton = document.createElement("button");
+                            restartButton.setAttribute('id', 'restartButton');
+                            const restartButtonText = document.createTextNode("Restart");
+                            restartButton.appendChild(restartButtonText);
+                            const element9 = document.getElementById("inGameContainer");
+                            element9.appendChild(restartButton);
+
+                            restartButton.addEventListener('click', startGame) // Hit button function
+                        }
+                        endGame()
                     }
 
-                }else if(computerCount < 21 && computerCount > playerCount){
-                    function endGame() {
-                        const h3 = document.createElement("h3"); // h3
-                        h3.setAttribute('id', 'endGameText')
-                        const h3Text = document.createTextNode("The Computer won! You lost this round.");
-                        h3.appendChild(h3Text);
-                        const element8 = document.getElementById("inGameContainer");
-                        element8.appendChild(h3);
-    
-                        const restartButton = document.createElement("button");
-                        restartButton.setAttribute('id', 'restartButton');
-                        const restartButtonText = document.createTextNode("Restart");
-                        restartButton.appendChild(restartButtonText);
-                        const element9 = document.getElementById("inGameContainer");
-                        element9.appendChild(restartButton);
-    
-                        restartButton.addEventListener('click', startGame) // Hit button function
-                    }
-                    endGame()
-                }else if(computerCount == playerCount){
-                    function endGame() {
-                        const h3 = document.createElement("h3"); // h3
-                        h3.setAttribute('id', 'endGameText')
-                        const h3Text = document.createTextNode("It is a draw.");
-                        h3.appendChild(h3Text);
-                        const element8 = document.getElementById("inGameContainer");
-                        element8.appendChild(h3);
-    
-                        const restartButton = document.createElement("button");
-                        restartButton.setAttribute('id', 'restartButton');
-                        const restartButtonText = document.createTextNode("Restart");
-                        restartButton.appendChild(restartButtonText);
-                        const element9 = document.getElementById("inGameContainer");
-                        element9.appendChild(restartButton);
-    
-                        restartButton.addEventListener('click', startGame) // Hit button function
-                    }
-                    endGame()
-                }else if(computerCount > 21){
+                } else if (computerCount > 21) {
                     function endGame() {
                         const h3 = document.createElement("h3"); // h3
                         h3.setAttribute('id', 'endGameText')
@@ -3061,18 +3840,37 @@ function startGame(){
                         h3.appendChild(h3Text);
                         const element8 = document.getElementById("inGameContainer");
                         element8.appendChild(h3);
-    
+
                         const restartButton = document.createElement("button");
                         restartButton.setAttribute('id', 'restartButton');
                         const restartButtonText = document.createTextNode("Restart");
                         restartButton.appendChild(restartButtonText);
                         const element9 = document.getElementById("inGameContainer");
                         element9.appendChild(restartButton);
-    
+
                         restartButton.addEventListener('click', startGame) // Hit button function
                     } // Else If Computer goes over 21
                     endGame()
-                }else if(computerCount == 21){
+                } else if (computerCount < 21 && computerCount == playerCount) {
+                    function endGame() {
+                        const h3 = document.createElement("h3"); // h3
+                        h3.setAttribute('id', 'endGameText')
+                        const h3Text = document.createTextNode("It is a draw.");
+                        h3.appendChild(h3Text);
+                        const element8 = document.getElementById("inGameContainer");
+                        element8.appendChild(h3);
+
+                        const restartButton = document.createElement("button");
+                        restartButton.setAttribute('id', 'restartButton');
+                        const restartButtonText = document.createTextNode("Restart");
+                        restartButton.appendChild(restartButtonText);
+                        const element9 = document.getElementById("inGameContainer");
+                        element9.appendChild(restartButton);
+
+                        restartButton.addEventListener('click', startGame) // Hit button function
+                    }
+                    endGame()
+                } else if (computerCount < 21 && computerCount > playerCount) {
                     function endGame() {
                         const h3 = document.createElement("h3"); // h3
                         h3.setAttribute('id', 'endGameText')
@@ -3080,43 +3878,42 @@ function startGame(){
                         h3.appendChild(h3Text);
                         const element8 = document.getElementById("inGameContainer");
                         element8.appendChild(h3);
-    
+
                         const restartButton = document.createElement("button");
                         restartButton.setAttribute('id', 'restartButton');
                         const restartButtonText = document.createTextNode("Restart");
                         restartButton.appendChild(restartButtonText);
                         const element9 = document.getElementById("inGameContainer");
                         element9.appendChild(restartButton);
-    
+
+                        restartButton.addEventListener('click', startGame) // Hit button function
+                    }
+                    endGame()
+                } else if (computerCount == 21) {
+                    function endGame() {
+                        const h3 = document.createElement("h3"); // h3
+                        h3.setAttribute('id', 'endGameText')
+                        const h3Text = document.createTextNode("The Computer won! You lost this round.");
+                        h3.appendChild(h3Text);
+                        const element8 = document.getElementById("inGameContainer");
+                        element8.appendChild(h3);
+
+                        const restartButton = document.createElement("button");
+                        restartButton.setAttribute('id', 'restartButton');
+                        const restartButtonText = document.createTextNode("Restart");
+                        restartButton.appendChild(restartButtonText);
+                        const element9 = document.getElementById("inGameContainer");
+                        element9.appendChild(restartButton);
+
                         restartButton.addEventListener('click', startGame) // Hit button function
                     }
                     endGame()
                 }
-
-            } else if (computerCount > 21) {
-                function endGame() {
-                    const h3 = document.createElement("h3"); // h3
-                    h3.setAttribute('id', 'endGameText')
-                    const h3Text = document.createTextNode("The Computer Busted!  You win!");
-                    h3.appendChild(h3Text);
-                    const element8 = document.getElementById("inGameContainer");
-                    element8.appendChild(h3);
-
-                    const restartButton = document.createElement("button");
-                    restartButton.setAttribute('id', 'restartButton');
-                    const restartButtonText = document.createTextNode("Restart");
-                    restartButton.appendChild(restartButtonText);
-                    const element9 = document.getElementById("inGameContainer");
-                    element9.appendChild(restartButton);
-
-                    restartButton.addEventListener('click', startGame) // Hit button function
-                } // Else If Computer goes over 21
-                endGame()
             } else if (computerCount < 21 && computerCount == playerCount) {
                 function endGame() {
                     const h3 = document.createElement("h3"); // h3
                     h3.setAttribute('id', 'endGameText')
-                    const h3Text = document.createTextNode("It is a draw.");
+                    const h3Text = document.createTextNode("It is a draw. Try again?");
                     h3.appendChild(h3Text);
                     const element8 = document.getElementById("inGameContainer");
                     element8.appendChild(h3);
@@ -3150,67 +3947,11 @@ function startGame(){
                     restartButton.addEventListener('click', startGame) // Hit button function
                 }
                 endGame()
-            } else if(computerCount == 21){
-                function endGame() {
-                    const h3 = document.createElement("h3"); // h3
-                    h3.setAttribute('id', 'endGameText')
-                    const h3Text = document.createTextNode("The Computer won! You lost this round.");
-                    h3.appendChild(h3Text);
-                    const element8 = document.getElementById("inGameContainer");
-                    element8.appendChild(h3);
-
-                    const restartButton = document.createElement("button");
-                    restartButton.setAttribute('id', 'restartButton');
-                    const restartButtonText = document.createTextNode("Restart");
-                    restartButton.appendChild(restartButtonText);
-                    const element9 = document.getElementById("inGameContainer");
-                    element9.appendChild(restartButton);
-
-                    restartButton.addEventListener('click', startGame) // Hit button function
-                }
-                endGame()
             }
-        }else if (computerCount < 21 && computerCount == playerCount) { // if(computerCount < playerCount && computerCount < 21) Statement
-            function endGame() {
-                const h3 = document.createElement("h3"); // h3
-                h3.setAttribute('id', 'endGameText')
-                const h3Text = document.createTextNode("It is a draw. Try again?");
-                h3.appendChild(h3Text);
-                const element8 = document.getElementById("inGameContainer");
-                element8.appendChild(h3);
+        } // STAY FUNCTION CLOSE BRACKET
+    } // START GAME FUNCTION CLOSE BRACKET
 
-                const restartButton = document.createElement("button");
-                restartButton.setAttribute('id', 'restartButton');
-                const restartButtonText = document.createTextNode("Restart");
-                restartButton.appendChild(restartButtonText);
-                const element9 = document.getElementById("inGameContainer");
-                element9.appendChild(restartButton);
 
-                restartButton.addEventListener('click', startGame) // Hit button function
-            }
-            endGame()
-        }else if (computerCount < 21 && computerCount > playerCount) {
-            function endGame() {
-                const h3 = document.createElement("h3"); // h3
-                h3.setAttribute('id', 'endGameText')
-                const h3Text = document.createTextNode("The Computer won. You lost this round.");
-                h3.appendChild(h3Text);
-                const element8 = document.getElementById("inGameContainer");
-                element8.appendChild(h3);
-
-                const restartButton = document.createElement("button");
-                restartButton.setAttribute('id', 'restartButton');
-                const restartButtonText = document.createTextNode("Restart");
-                restartButton.appendChild(restartButtonText);
-                const element9 = document.getElementById("inGameContainer");
-                element9.appendChild(restartButton);
-
-                restartButton.addEventListener('click', startGame) // Hit button function
-            }
-            endGame()
-        }
-    } // Stay Function
-} // Start Game Function
 
 
 
