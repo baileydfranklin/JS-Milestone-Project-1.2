@@ -84,11 +84,11 @@ h2{
     height: 315px;
 }
 /*------------------------------------------------------ANIMATION FOR DEALING CARDS*/
-#deckPile5:hover{ /*Use this for user and computer hand*/
-    top: 650px;
-    left: 850px;
-    transition-duration: 1s;
-}
+/* #deckPile5:hover{ Use this for user and computer hand */
+    /* top: 650px; */
+    /* left: 850px; */
+    /* transition-duration: 1s; */
+/* } */
 /* #dealDisplayPlayerCard1{
     position: absolute;
     top: 350px;
