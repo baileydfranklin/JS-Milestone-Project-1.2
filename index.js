@@ -579,7 +579,7 @@ function startGame(){
     console.log(`${playerCount} Player's total hand value after first dealt card`) // Test if player count is adding up correctly
 
     const h3PlayerScore = document.createElement("h3"); // h3 PLAYER DISPLAY COUNTER
-    h3PlayerScore.setAttribute('id', 'playerScore')
+    h3PlayerScore.setAttribute('id', 'playerScore1')
     const h3Text1 = document.createTextNode(playerCount);
     h3PlayerScore.appendChild(h3Text1);
     const element4 = document.getElementById("inGameContainer");
@@ -912,7 +912,7 @@ function startGame(){
     console.log(`${computerCount} Computer's total hand value after first dealt card`) // Test if computer count is adding up correctly
 
     const h3ComputerScore = document.createElement("h3"); // h3 COMPUTER DISPLAY COUNTER
-    h3ComputerScore.setAttribute('id', 'computerScore')
+    h3ComputerScore.setAttribute('id', 'computerScore1')
     const h3Text2 = document.createTextNode(computerCount);
     h3ComputerScore.appendChild(h3Text2);
     const element5 = document.getElementById("inGameContainer");
@@ -1568,7 +1568,7 @@ function startGame(){
         displayComputerCard2.setAttribute("id", id_name6);
         document.getElementById('inGameContainer').appendChild(displayComputerCard2);
     }
-
+    
     let computerHiddenCard = document.createElement('img');
     computerHiddenCard.src = 'assets/.faceDownCard.jfif';
     let id_name7 = 'computerHiddenCard';
@@ -1950,7 +1950,7 @@ function startGame(){
 
             const hitButton2 = document.createElement("button");
             hitButton2.setAttribute('id', 'hitButton2');
-            const hitButton2Text = document.createTextNode("Hit2");
+            const hitButton2Text = document.createTextNode("Hit");
             hitButton2.appendChild(hitButton2Text);
             const element6 = document.getElementById("inGameContainer");
             element6.appendChild(hitButton2);
@@ -2303,31 +2303,12 @@ function startGame(){
                         restartButton.addEventListener('click', startGame) // Hit button function
                     }
                     endGame()
-                } else if (playerCount > 21) {
-                    function endGame() {
-                        const h3 = document.createElement("h3"); // h3
-                        h3.setAttribute('id', 'endGameText')
-                        const h3Text = document.createTextNode("BUST! You lose.");
-                        h3.appendChild(h3Text);
-                        const element8 = document.getElementById("inGameContainer");
-                        element8.appendChild(h3);
-
-                        const restartButton = document.createElement("button");
-                        restartButton.setAttribute('id', 'restartButton');
-                        const restartButtonText = document.createTextNode("Restart");
-                        restartButton.appendChild(restartButtonText);
-                        const element9 = document.getElementById("inGameContainer");
-                        element9.appendChild(restartButton);
-
-                        restartButton.addEventListener('click', startGame) // Hit button function
-                    }
-                    endGame()
-                } else if (playerCount < 21) {
+                }else if (playerCount < 21) {
                     hitButton2.setAttribute('id', 'deleteHitButton2')
 
                     const hitButton3 = document.createElement("button");
                     hitButton3.setAttribute('id', 'hitButton3');
-                    const hitButton3Text = document.createTextNode("Hit3");
+                    const hitButton3Text = document.createTextNode("Hit");
                     hitButton3.appendChild(hitButton3Text);
                     const element6 = document.getElementById("inGameContainer");
                     element6.appendChild(hitButton3);

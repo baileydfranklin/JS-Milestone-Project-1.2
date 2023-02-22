@@ -123,33 +123,37 @@ h2{
     box-shadow: 10px 10px 20px 4px rgba(0,0,0,1);
 }
 /*------------------------------------------------------SCORE BOARD*/
-#scoreBoard1{
+#scoreBoard1{ /*Not being used until I fix a bug... */
     position: absolute;
     top: 690px;
     left: 200px;
     width: 220px;
     height: auto;
     box-shadow: 10px 10px 20px 4px rgba(0,0,0,1);
+    opacity: 0;
 }
-#scoreBoard2{
+#scoreBoard2{/*Not being used until I fix a bug... */
     position: absolute;
     top: 150px;
     left: 200px;
     width: 220px;
     height: auto;
     box-shadow: 10px 10px 20px 4px rgba(0,0,0,1);
+    opacity: 0;
 }
-#playerScore{
+#playerScore1{/*Not being used until I fix a bug... */
     font-size: 125px;
     position: absolute;
     top: 575px;
     left: 250px;
+    opacity: 0;
 }
-#computerScore{
+#computerScore1{/*Not being used until I fix a bug... */
     font-size: 125px;
     position: absolute;
     top: 35px;
     left: 250px;
+    opacity: 0;
 }
 /*------------------------------------------------------IN GAME BUTTONS*/
 #hitButton{
