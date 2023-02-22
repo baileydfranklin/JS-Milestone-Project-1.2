@@ -2303,7 +2303,7 @@ function startGame(){
                         restartButton.addEventListener('click', startGame) // Hit button function
                     }
                     endGame()
-                }else if(playerCount > 21){
+                } else if (playerCount > 21) {
                     function endGame() {
                         const h3 = document.createElement("h3"); // h3
                         h3.setAttribute('id', 'endGameText')
@@ -2322,23 +2322,24 @@ function startGame(){
                         restartButton.addEventListener('click', startGame) // Hit button function
                     }
                     endGame()
-                }else if (playerCount < 21) { }
-                hitButton2.setAttribute('id', 'deleteHitButton2')
+                } else if (playerCount < 21) {
+                    hitButton2.setAttribute('id', 'deleteHitButton2')
 
-                const hitButton3 = document.createElement("button");
-                hitButton3.setAttribute('id', 'hitButton3');
-                const hitButton3Text = document.createTextNode("Hit3");
-                hitButton3.appendChild(hitButton3Text);
-                const element6 = document.getElementById("inGameContainer");
-                element6.appendChild(hitButton3);
+                    const hitButton3 = document.createElement("button");
+                    hitButton3.setAttribute('id', 'hitButton3');
+                    const hitButton3Text = document.createTextNode("Hit3");
+                    hitButton3.appendChild(hitButton3Text);
+                    const element6 = document.getElementById("inGameContainer");
+                    element6.appendChild(hitButton3);
 
-                hitButton3.addEventListener('click', hit3) // HIT BUTTON EVENT LISTENER
+                    hitButton3.addEventListener('click', hit3) // HIT BUTTON EVENT LISTENER
+                }
 
-                function hit3(){
+                function hit3() {
                     function dealHit3(deck) {
                         let randomCard = Math.floor(Math.random() * deck.length);
                         let dealHit3 = deck[randomCard];
-            
+
                         return dealHit3;
                     }
                     let hitCard3 = dealHit3(deck);
