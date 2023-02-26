@@ -4018,11 +4018,18 @@ function restartGame1() { // RESTARTS THE GAME
     if (hitCount == 0) {
         document.getElementById('hitButton').remove()
     } else if (hitCount == 1) {
+        document.getElementById('deleteHitButton1').remove()
         document.getElementById('hitButton2').remove()
     } else if (hitCount == 2) {
-        document.getElementById('hitButton3').remove()
+        document.getElementById('deleteHitButton1').remove();
+        document.getElementById('hitButton2').remove();
+        document.getElementById('deleteHitButton2').remove();
+        document.getElementById('hitButton3').remove();
     } else if (hitCount == 3) {
-        document.getElementById('hitButton4').remove()
+        document.getElementById('deleteHitButton1').remove();
+        document.getElementById('hitButton2').remove();
+        document.getElementById('deleteHitButton2').remove();
+        document.getElementById('hitButton3').remove();
     }
 
     document.getElementById('stayButton').remove()
@@ -4063,11 +4070,18 @@ function restartGame2() { // RESTARTS THE GAME
         document.getElementById('hitButton').remove()
     } else if (hitCount == 1) {
         console.log(`HIT COUNT = ${hitCount}`)
+        document.getElementById('deleteHitButton1').remove()
         document.getElementById('hitButton2').remove()
     } else if (hitCount == 2) {
-        document.getElementById('hitButton3').remove()
+        document.getElementById('deleteHitButton1').remove();
+        document.getElementById('hitButton2').remove();
+        document.getElementById('deleteHitButton2').remove();
+        document.getElementById('hitButton3').remove();
     } else if (hitCount == 3) {
-        document.getElementById('hitButton4').remove()
+        document.getElementById('deleteHitButton1').remove();
+        document.getElementById('hitButton2').remove();
+        document.getElementById('deleteHitButton2').remove();
+        document.getElementById('hitButton3').remove();
     }
 
     document.getElementById('stayButton').remove()
@@ -4109,11 +4123,18 @@ function restartGame3() { // RESTARTS THE GAME
         document.getElementById('hitButton').remove()
     } else if (hitCount == 1) {
         console.log(`HIT COUNT = ${hitCount}`)
+        document.getElementById('deleteHitButton1').remove()
         document.getElementById('hitButton2').remove()
     } else if (hitCount == 2) {
-        document.getElementById('hitButton2').remove()
+        document.getElementById('deleteHitButton1').remove();
+        document.getElementById('hitButton2').remove();
+        document.getElementById('deleteHitButton2').remove();
+        document.getElementById('hitButton3').remove();
     } else if (hitCount == 3) {
-        document.getElementById('hitButton4').remove()
+        document.getElementById('deleteHitButton1').remove();
+        document.getElementById('hitButton2').remove();
+        document.getElementById('deleteHitButton2').remove();
+        document.getElementById('hitButton3').remove();
     }
 
     document.getElementById('stayButton').remove()
@@ -4155,11 +4176,18 @@ function restartGame4() { // RESTARTS THE GAME
     if (hitCount == 0) {
         document.getElementById('hitButton').remove()
     } else if (hitCount == 1) {
+        document.getElementById('deleteHitButton1').remove()
         document.getElementById('hitButton2').remove()
     } else if (hitCount == 2) {
-        document.getElementById('hitButton3').remove()
+        document.getElementById('deleteHitButton1').remove();
+        document.getElementById('hitButton2').remove();
+        document.getElementById('deleteHitButton2').remove();
+        document.getElementById('hitButton3').remove();
     } else if (hitCount == 3) {
-        document.getElementById('hitButton4').remove()
+        document.getElementById('deleteHitButton1').remove();
+        document.getElementById('hitButton2').remove();
+        document.getElementById('deleteHitButton2').remove();
+        document.getElementById('hitButton3').remove();
     }
 
     document.getElementById('stayButton').remove()
@@ -4181,7 +4209,22 @@ function restartGame5() { // RESTARTS THE GAME
 
     document.getElementById('inGameContainer').removeChild(displayHitCard1);
 
-    document.getElementById('hitButton').remove()
+    if (hitCount == 0) {
+        document.getElementById('hitButton').remove()
+    } else if (hitCount == 1) {
+        document.getElementById('hitButton').remove()
+    } else if (hitCount == 2) {
+        document.getElementById('deleteHitButton1').remove();
+        document.getElementById('hitButton2').remove();
+        document.getElementById('deleteHitButton2').remove();
+        document.getElementById('hitButton3').remove();
+    } else if (hitCount == 3) {
+        document.getElementById('deleteHitButton1').remove();
+        document.getElementById('hitButton2').remove();
+        document.getElementById('deleteHitButton2').remove();
+        document.getElementById('hitButton3').remove();
+    }
+
     document.getElementById('stayButton').remove()
 
     document.getElementById('restartButton').remove()
@@ -4208,7 +4251,21 @@ function restartGame6() { // RESTARTS THE GAME
     document.getElementById('inGameContainer').removeChild(displayHitCard1);
     document.getElementById('inGameContainer').removeChild(displayHitCard2);
 
-    document.getElementById('hitButton2').remove()
+if (hitCount == 0) {
+        document.getElementById('hitButton').remove()
+    } else if (hitCount == 1) {
+        document.getElementById('deleteHitButton1').remove()
+        document.getElementById('hitButton2').remove()
+    } else if (hitCount == 2) {
+        document.getElementById('deleteHitButton1').remove();
+        document.getElementById('hitButton2').remove();
+    } else if (hitCount == 3) {
+        document.getElementById('deleteHitButton1').remove();
+        document.getElementById('hitButton2').remove();
+        document.getElementById('deleteHitButton2').remove();
+        document.getElementById('hitButton3').remove();
+    }
+
     document.getElementById('stayButton').remove()
 
     document.getElementById('restartButton').remove()
@@ -4236,7 +4293,22 @@ function restartGame7() { // RESTARTS THE GAME
     document.getElementById('inGameContainer').removeChild(displayHitCard2);
     document.getElementById('inGameContainer').removeChild(displayHitCard3);
 
-    document.getElementById('hitButton3').remove()
+if (hitCount == 0) {
+        document.getElementById('hitButton').remove()
+    } else if (hitCount == 1) {
+        document.getElementById('deleteHitButton1').remove()
+        document.getElementById('hitButton2').remove()
+    } else if (hitCount == 2) {
+        document.getElementById('deleteHitButton1').remove();
+        document.getElementById('hitButton2').remove();
+        document.getElementById('deleteHitButton2').remove();
+        document.getElementById('hitButton3').remove();
+    } else if (hitCount == 3) {
+        document.getElementById('deleteHitButton1').remove();
+        document.getElementById('deleteHitButton2').remove();
+        document.getElementById('hitButton3').remove();
+    }
+
     document.getElementById('stayButton').remove()
 
     document.getElementById('restartButton').remove()
