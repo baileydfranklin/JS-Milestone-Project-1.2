@@ -4069,7 +4069,6 @@ function restartGame2() { // RESTARTS THE GAME
         document.getElementById('hitButton').remove()
     } else if (hitCount == 1) {
         console.log(`HIT COUNT = ${hitCount}`)
-        document.getElementById('deleteHitButton1').remove()
         document.getElementById('hitButton2').remove()
     } else if (hitCount == 2) {
         document.getElementById('deleteHitButton1').remove();
