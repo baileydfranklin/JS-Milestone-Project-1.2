@@ -175,8 +175,6 @@ element2.appendChild(h2);
 
 document.getElementById("headerContainer").style.textAlign = "center"; // CSS Center Text within headerContainer
 
-
-
 /////     START GAME CONTAINER     /////
 const startButton = document.createElement("button");
 startButton.setAttribute('id', 'startButton');
@@ -187,15 +185,18 @@ element3.appendChild(startButton);
 
 startButton.addEventListener('click', startGame) // Start game function
 
+let numberOfGames = 1;
+let HitCount = 0;
+
 function startGame(){
 
+    if(numberOfGames == 1){ // To allow the game to recall the startGame() Function
     console.log('The game has started'); // Test if Button is working
     element3.parentNode.removeChild(startGameContainer); // Remove Start Button after 'click'
-
     element2.parentNode.removeChild(headerContainer); // Remove header container after 'click'
-    // element1.parentNode.removeChild(headerContainer); // Remove header container after 'click'
-
-
+    console.log(`Number of games = ${numberOfGames}`)
+    }
+    console.log(`Number of games = ${numberOfGames}`)
 
     function addDeck(){
     let deckPile1 = document.createElement('img');
@@ -907,8 +908,6 @@ function startGame(){
         displayComputerCard1.setAttribute("id", id_name6);
         document.getElementById('inGameContainer').appendChild(displayComputerCard1);
     }
-
-    // displayPlayerCard1.setAttribute('id', 'dealDisplayPlayerCard1');
 
     let computerCount = computerCard1.value;
     console.log(`${computerCount} Computer's total hand value after first dealt card`) // Test if computer count is adding up correctly
@@ -1925,7 +1924,7 @@ function startGame(){
 
         playerCount += hitCard1.value; // Player's total hand value after hit 1
         console.log(`${playerCount} Player's hand value after hit 1`); 
-
+        
         if (playerCount > 21) {
 
             function endGame() {
@@ -1943,7 +1942,10 @@ function startGame(){
                 const element9 = document.getElementById("inGameContainer");
                 element9.appendChild(restartButton);
 
-                restartButton.addEventListener('click', restartGame) // Hit button function
+                hitButton.removeEventListener('click', hit)
+                stayButton.removeEventListener('click', stay)
+
+                restartButton.addEventListener('click', restartGame5) // Hit button function
             }
             endGame()
         }else if(playerCount < 21){
@@ -2302,7 +2304,10 @@ function startGame(){
                         const element9 = document.getElementById("inGameContainer");
                         element9.appendChild(restartButton);
 
-                        restartButton.addEventListener('click', restartGame) // Hit button function
+                        hitButton.removeEventListener('click', hit)
+                        stayButton.removeEventListener('click', stay)
+
+                        restartButton.addEventListener('click', restartGame6) // Hit button function
                     }
                     endGame()
                 }else if (playerCount < 21) {
@@ -2660,8 +2665,11 @@ function startGame(){
                             restartButton.appendChild(restartButtonText);
                             const element9 = document.getElementById("inGameContainer");
                             element9.appendChild(restartButton);
+
+                            hitButton.removeEventListener('click', hit)
+                            stayButton.removeEventListener('click', stay)
     
-                            restartButton.addEventListener('click', restartGame) // Hit button function
+                            restartButton.addEventListener('click', restartGame7) // Hit button function
                         }
                         endGame()
                     }else if(playerCount < 21){
@@ -3676,7 +3684,10 @@ function startGame(){
                                 const element9 = document.getElementById("inGameContainer");
                                 element9.appendChild(restartButton);
 
-                                restartButton.addEventListener('click', restartGame) // Hit button function
+                                hitButton.removeEventListener('click', hit)
+                                stayButton.removeEventListener('click', stay)
+
+                                restartButton.addEventListener('click', restartGame4) // Hit button function
                             }
                             endGame()
                         } else if (computerCount < 21 && computerCount == playerCount) {
@@ -3695,7 +3706,10 @@ function startGame(){
                                 const element9 = document.getElementById("inGameContainer");
                                 element9.appendChild(restartButton);
 
-                                restartButton.addEventListener('click', restartGame) // Hit button function
+                                hitButton.removeEventListener('click', hit)
+                                stayButton.removeEventListener('click', stay)
+
+                                restartButton.addEventListener('click', restartGame4) // Hit button function
                             }
                             endGame()
                         } else if (computerCount == 21) {
@@ -3714,7 +3728,10 @@ function startGame(){
                                 const element9 = document.getElementById("inGameContainer");
                                 element9.appendChild(restartButton);
 
-                                restartButton.addEventListener('click', restartGame) // Hit button function
+                                hitButton.removeEventListener('click', hit)
+                                stayButton.removeEventListener('click', stay)
+
+                                restartButton.addEventListener('click', restartGame4) // Hit button function
                             }
                             endGame()
                         } else if (computerCount > 21) {
@@ -3733,7 +3750,10 @@ function startGame(){
                                 const element9 = document.getElementById("inGameContainer");
                                 element9.appendChild(restartButton);
 
-                                restartButton.addEventListener('click', restartGame) // Hit button function
+                                hitButton.removeEventListener('click', hit)
+                                stayButton.removeEventListener('click', stay)
+
+                                restartButton.addEventListener('click', restartGame4) // Hit button function
                             } // Else If Computer goes over 21
                             endGame()
                         }
@@ -3754,7 +3774,10 @@ function startGame(){
                             const element9 = document.getElementById("inGameContainer");
                             element9.appendChild(restartButton);
 
-                            restartButton.addEventListener('click', restartGame) // Hit button function
+                            hitButton.removeEventListener('click', hit)
+                            stayButton.removeEventListener('click', stay)
+
+                            restartButton.addEventListener('click', restartGame3) // Hit button function
                         }
                         endGame()
                     } else if (computerCount == playerCount) {
@@ -3773,7 +3796,10 @@ function startGame(){
                             const element9 = document.getElementById("inGameContainer");
                             element9.appendChild(restartButton);
 
-                            restartButton.addEventListener('click', restartGame) // Hit button function
+                            hitButton.removeEventListener('click', hit)
+                            stayButton.removeEventListener('click', stay)
+
+                            restartButton.addEventListener('click', restartGame3) // Hit button function
                         }
                         endGame()
                     } else if (computerCount > 21) {
@@ -3792,7 +3818,10 @@ function startGame(){
                             const element9 = document.getElementById("inGameContainer");
                             element9.appendChild(restartButton);
 
-                            restartButton.addEventListener('click', restartGame) // Hit button function
+                            hitButton.removeEventListener('click', hit)
+                            stayButton.removeEventListener('click', stay)
+
+                            restartButton.addEventListener('click', restartGame3) // Hit button function
                         } // Else If Computer goes over 21
                         endGame()
                     } else if (computerCount == 21) {
@@ -3811,7 +3840,10 @@ function startGame(){
                             const element9 = document.getElementById("inGameContainer");
                             element9.appendChild(restartButton);
 
-                            restartButton.addEventListener('click', restartGame) // Hit button function
+                            hitButton.removeEventListener('click', hit)
+                            stayButton.removeEventListener('click', stay)
+
+                            restartButton.addEventListener('click', restartGame3) // Hit button function
                         }
                         endGame()
                     }
@@ -3832,7 +3864,10 @@ function startGame(){
                         const element9 = document.getElementById("inGameContainer");
                         element9.appendChild(restartButton);
 
-                        restartButton.addEventListener('click', restartGame) // Hit button function
+                        hitButton.removeEventListener('click', hit)
+                        stayButton.removeEventListener('click', stay)
+
+                        restartButton.addEventListener('click', restartGame2) // Hit button function
                     } // Else If Computer goes over 21
                     endGame()
                 } else if (computerCount < 21 && computerCount == playerCount) {
@@ -3851,7 +3886,10 @@ function startGame(){
                         const element9 = document.getElementById("inGameContainer");
                         element9.appendChild(restartButton);
 
-                        restartButton.addEventListener('click', restartGame) // Hit button function
+                        hitButton.removeEventListener('click', hit)
+                        stayButton.removeEventListener('click', stay)
+
+                        restartButton.addEventListener('click', restartGame2) // Hit button function
                     }
                     endGame()
                 } else if (computerCount < 21 && computerCount > playerCount) {
@@ -3870,7 +3908,10 @@ function startGame(){
                         const element9 = document.getElementById("inGameContainer");
                         element9.appendChild(restartButton);
 
-                        restartButton.addEventListener('click', restartGame) // Hit button function
+                        hitButton.removeEventListener('click', hit)
+                        stayButton.removeEventListener('click', stay)
+
+                        restartButton.addEventListener('click', restartGame2) // Hit button function
                     }
                     endGame()
                 } else if (computerCount == 21) {
@@ -3889,7 +3930,10 @@ function startGame(){
                         const element9 = document.getElementById("inGameContainer");
                         element9.appendChild(restartButton);
 
-                        restartButton.addEventListener('click', restartGame) // Hit button function
+                        hitButton.removeEventListener('click', hit)
+                        stayButton.removeEventListener('click', stay)
+
+                        restartButton.addEventListener('click', restartGame2) // Hit button function
                     }
                     endGame()
                 }
@@ -3909,7 +3953,10 @@ function startGame(){
                     const element9 = document.getElementById("inGameContainer");
                     element9.appendChild(restartButton);
 
-                    restartButton.addEventListener('click', restartGame) // Hit button function
+                    hitButton.removeEventListener('click', hit)
+                    stayButton.removeEventListener('click', stay)
+
+                    restartButton.addEventListener('click', restartGame1) // Hit button function
                 }
                 endGame()
             } else if (computerCount < 21 && computerCount > playerCount) {
@@ -3928,29 +3975,151 @@ function startGame(){
                     const element9 = document.getElementById("inGameContainer");
                     element9.appendChild(restartButton);
 
-                    restartButton.addEventListener('click', restartGame) // Hit button function
+                    hitButton.removeEventListener('click', hit)
+                    stayButton.removeEventListener('click', stay)
+
+                    restartButton.addEventListener('click', restartGame1) // Hit button function
+
                 }
                 endGame()
             }
         } // STAY FUNCTION CLOSE BRACKET
     } // START GAME FUNCTION CLOSE BRACKET
 
-    function restartGame(){ // RESTARTS THE GAME
-        window.location.reload();
-    }
+function restartGame1() { // RESTARTS THE GAME
+    numberOfGames++
+
+    document.getElementById('inGameContainer').removeChild(displayPlayerCard1);
+    document.getElementById('inGameContainer').removeChild(displayPlayerCard2);
+    document.getElementById('inGameContainer').removeChild(displayComputerCard1);
+    document.getElementById('inGameContainer').removeChild(displayComputerCard2);
+
+
+    document.getElementById('hitButton').remove()
+    document.getElementById('stayButton').remove()
+
+    document.getElementById('restartButton').remove()
+    document.getElementById('endGameText').remove()
+
+    startGame();
+}
+function restartGame2() { // RESTARTS THE GAME
+    numberOfGames++
+
+    document.getElementById('inGameContainer').removeChild(displayPlayerCard1);
+    document.getElementById('inGameContainer').removeChild(displayPlayerCard2);
+    document.getElementById('inGameContainer').removeChild(displayComputerCard1);
+    document.getElementById('inGameContainer').removeChild(displayComputerCard2);
+
+    document.getElementById('inGameContainer').removeChild(displayStayCard2)
+
+
+    document.getElementById('hitButton').remove()
+    document.getElementById('stayButton').remove()
+
+    document.getElementById('restartButton').remove()
+    document.getElementById('endGameText').remove()
+
+    startGame();
+}
+function restartGame3() { // RESTARTS THE GAME
+    numberOfGames++
+
+    document.getElementById('inGameContainer').removeChild(displayPlayerCard1);
+    document.getElementById('inGameContainer').removeChild(displayPlayerCard2);
+    document.getElementById('inGameContainer').removeChild(displayComputerCard1);
+    document.getElementById('inGameContainer').removeChild(displayComputerCard2);
+
+    document.getElementById('inGameContainer').removeChild(displayStayCard2)
+    document.getElementById('inGameContainer').removeChild(displayStayCard3)
+
+
+
+    document.getElementById('hitButton').remove()
+    document.getElementById('stayButton').remove()
+
+    document.getElementById('restartButton').remove()
+    document.getElementById('endGameText').remove()
+
+    startGame();
+}
+function restartGame4() { // RESTARTS THE GAME
+    numberOfGames++
+
+    document.getElementById('inGameContainer').removeChild(displayPlayerCard1);
+    document.getElementById('inGameContainer').removeChild(displayPlayerCard2);
+    document.getElementById('inGameContainer').removeChild(displayComputerCard1);
+    document.getElementById('inGameContainer').removeChild(displayComputerCard2);
+
+    document.getElementById('inGameContainer').removeChild(displayStayCard2)
+    document.getElementById('inGameContainer').removeChild(displayStayCard3)
+    document.getElementById('inGameContainer').removeChild(displayStayCard4)
 
 
 
 
+    document.getElementById('hitButton').remove()
+    document.getElementById('stayButton').remove()
 
-//////////////////////////////////////////////////////////////////////////////////
-///   NEED HELP WITH   ///
-// - Display total hand value
-// - Loop 'Hit' button function
-// - Make 'Restart Game' button work
+    document.getElementById('restartButton').remove()
+    document.getElementById('endGameText').remove()
 
+    startGame();
+}
+function restartGame5() { // RESTARTS THE GAME
+    numberOfGames++
 
+    document.getElementById('inGameContainer').removeChild(displayPlayerCard1);
+    document.getElementById('inGameContainer').removeChild(displayPlayerCard2);
+    document.getElementById('inGameContainer').removeChild(displayComputerCard1);
+    document.getElementById('inGameContainer').removeChild(displayComputerCard2);
 
-///   TO DO   ///
-// - Animate cards as they get dealt out - kind of important?
-// - Change 'Hit' and 'Stay' buttons to animated Suit buttons - not important. BUT cool.
+    document.getElementById('inGameContainer').removeChild(displayHitCard1);
+
+    document.getElementById('hitButton').remove()
+    document.getElementById('stayButton').remove()
+
+    document.getElementById('restartButton').remove()
+    document.getElementById('endGameText').remove()
+
+    startGame();
+}
+function restartGame6() { // RESTARTS THE GAME
+    numberOfGames++
+
+    document.getElementById('inGameContainer').removeChild(displayPlayerCard1);
+    document.getElementById('inGameContainer').removeChild(displayPlayerCard2);
+    document.getElementById('inGameContainer').removeChild(displayComputerCard1);
+    document.getElementById('inGameContainer').removeChild(displayComputerCard2);
+
+    document.getElementById('inGameContainer').removeChild(displayHitCard1);
+    document.getElementById('inGameContainer').removeChild(displayHitCard2);
+
+    document.getElementById('hitButton').remove()
+    document.getElementById('stayButton').remove()
+
+    document.getElementById('restartButton').remove()
+    document.getElementById('endGameText').remove()
+
+    startGame();
+}
+function restartGame7() { // RESTARTS THE GAME
+    numberOfGames++
+
+    document.getElementById('inGameContainer').removeChild(displayPlayerCard1);
+    document.getElementById('inGameContainer').removeChild(displayPlayerCard2);
+    document.getElementById('inGameContainer').removeChild(displayComputerCard1);
+    document.getElementById('inGameContainer').removeChild(displayComputerCard2);
+
+    document.getElementById('inGameContainer').removeChild(displayHitCard1);
+    document.getElementById('inGameContainer').removeChild(displayHitCard2);
+    document.getElementById('inGameContainer').removeChild(displayHitCard3);
+
+    document.getElementById('hitButton').remove()
+    document.getElementById('stayButton').remove()
+
+    document.getElementById('restartButton').remove()
+    document.getElementById('endGameText').remove()
+
+    startGame();
+}
