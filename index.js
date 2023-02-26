@@ -186,10 +186,10 @@ element3.appendChild(startButton);
 startButton.addEventListener('click', startGame) // Start game function
 
 let numberOfGames = 1;
-let HitCount = 0;
+let hitCount = 0;
 
 function startGame(){
-
+    hitCount = 0;
     if(numberOfGames == 1){ // To allow the game to recall the startGame() Function
     console.log('The game has started'); // Test if Button is working
     element3.parentNode.removeChild(startGameContainer); // Remove Start Button after 'click'
@@ -248,7 +248,7 @@ function startGame(){
         scoreBoard2.setAttribute("id", id_name7);
         document.getElementById('inGameContainer').appendChild(scoreBoard2);
     }
-    addScoreBoareds()
+    // addScoreBoareds()
 
 
 
@@ -1599,6 +1599,7 @@ function startGame(){
     stayButton.addEventListener('click', stay) // STAY BUTTON EVENT LISTENER
 
     function hit() {
+        hitCount = 1;
         function dealHit1(deck) {
             let randomCard = Math.floor(Math.random() * deck.length);
             let dealHit1 = deck[randomCard];
@@ -1951,6 +1952,7 @@ function startGame(){
         }else if(playerCount < 21){
 
             hitButton.setAttribute('id', 'deleteHitButton1')
+            // document.getElementById('hitButton').remove();
 
             const hitButton2 = document.createElement("button");
             hitButton2.setAttribute('id', 'hitButton2');
@@ -1962,6 +1964,7 @@ function startGame(){
             hitButton2.addEventListener('click', hit2) // HIT BUTTON EVENT LISTENER
 
             function hit2(){
+                hitCount = 2;
                 function dealHit2(deck) {
                     let randomCard = Math.floor(Math.random() * deck.length);
                     let dealHit2 = deck[randomCard];
@@ -2324,6 +2327,7 @@ function startGame(){
                 }
 
                 function hit3() {
+                    hitCount = 3;
                     function dealHit3(deck) {
                         let randomCard = Math.floor(Math.random() * deck.length);
                         let dealHit3 = deck[randomCard];
@@ -2333,7 +2337,7 @@ function startGame(){
                     let hitCard3 = dealHit3(deck);
                     console.log(hitCard3) // Test if random card was selected
 
-                    if (hitCard3.name == deck[0].name) { // HIT FUNCTION
+                    if(hitCard3.name == deck[0].name) { // HIT FUNCTION
                         let displayHitCard3 = document.createElement('img');
                         displayHitCard3.src = 'assets/AC.png';
                         let id_name6 = 'displayHitCard3';
@@ -3994,8 +3998,33 @@ function restartGame1() { // RESTARTS THE GAME
     document.getElementById('inGameContainer').removeChild(displayComputerCard1);
     document.getElementById('inGameContainer').removeChild(displayComputerCard2);
 
+    document.getElementById('deckPile1').remove();
+    document.getElementById('deckPile2').remove();
+    document.getElementById('deckPile3').remove();
+    document.getElementById('deckPile4').remove();
+    document.getElementById('deckPile5').remove();
 
-    document.getElementById('hitButton').remove()
+    if(hitCount == 1){
+        document.getElementById('inGameContainer').removeChild(displayHitCard1);
+    }else if(hitCount == 2){
+        document.getElementById('inGameContainer').removeChild(displayHitCard1);
+        document.getElementById('inGameContainer').removeChild(displayHitCard2);
+    }else if(hitCount == 3){
+        document.getElementById('inGameContainer').removeChild(displayHitCard1);
+        document.getElementById('inGameContainer').removeChild(displayHitCard2);
+        document.getElementById('inGameContainer').removeChild(displayHitCard3);
+    }
+
+    if (hitCount == 0) {
+        document.getElementById('hitButton').remove()
+    } else if (hitCount == 1) {
+        document.getElementById('hitButton2').remove()
+    } else if (hitCount == 2) {
+        document.getElementById('hitButton3').remove()
+    } else if (hitCount == 3) {
+        document.getElementById('hitButton4').remove()
+    }
+
     document.getElementById('stayButton').remove()
 
     document.getElementById('restartButton').remove()
@@ -4011,10 +4040,36 @@ function restartGame2() { // RESTARTS THE GAME
     document.getElementById('inGameContainer').removeChild(displayComputerCard1);
     document.getElementById('inGameContainer').removeChild(displayComputerCard2);
 
+    document.getElementById('deckPile1').remove();
+    document.getElementById('deckPile2').remove();
+    document.getElementById('deckPile3').remove();
+    document.getElementById('deckPile4').remove();
+    document.getElementById('deckPile5').remove();
+
     document.getElementById('inGameContainer').removeChild(displayStayCard2)
 
+    if(hitCount == 1){
+        document.getElementById('inGameContainer').removeChild(displayHitCard1);
+    }else if(hitCount == 2){
+        document.getElementById('inGameContainer').removeChild(displayHitCard1);
+        document.getElementById('inGameContainer').removeChild(displayHitCard2);
+    }else if(hitCount == 3){
+        document.getElementById('inGameContainer').removeChild(displayHitCard1);
+        document.getElementById('inGameContainer').removeChild(displayHitCard2);
+        document.getElementById('inGameContainer').removeChild(displayHitCard3);
+    }
 
-    document.getElementById('hitButton').remove()
+    if (hitCount == 0) {
+        document.getElementById('hitButton').remove()
+    } else if (hitCount == 1) {
+        console.log(`HIT COUNT = ${hitCount}`)
+        document.getElementById('hitButton2').remove()
+    } else if (hitCount == 2) {
+        document.getElementById('hitButton3').remove()
+    } else if (hitCount == 3) {
+        document.getElementById('hitButton4').remove()
+    }
+
     document.getElementById('stayButton').remove()
 
     document.getElementById('restartButton').remove()
@@ -4030,12 +4085,37 @@ function restartGame3() { // RESTARTS THE GAME
     document.getElementById('inGameContainer').removeChild(displayComputerCard1);
     document.getElementById('inGameContainer').removeChild(displayComputerCard2);
 
+    document.getElementById('deckPile1').remove();
+    document.getElementById('deckPile2').remove();
+    document.getElementById('deckPile3').remove();
+    document.getElementById('deckPile4').remove();
+    document.getElementById('deckPile5').remove();
+
     document.getElementById('inGameContainer').removeChild(displayStayCard2)
     document.getElementById('inGameContainer').removeChild(displayStayCard3)
 
+    if(hitCount == 1){
+        document.getElementById('inGameContainer').removeChild(displayHitCard1);
+    }else if(hitCount == 2){
+        document.getElementById('inGameContainer').removeChild(displayHitCard1);
+        document.getElementById('inGameContainer').removeChild(displayHitCard2);
+    }else if(hitCount == 3){
+        document.getElementById('inGameContainer').removeChild(displayHitCard1);
+        document.getElementById('inGameContainer').removeChild(displayHitCard2);
+        document.getElementById('inGameContainer').removeChild(displayHitCard3);
+    }
 
+    if (hitCount == 0) {
+        document.getElementById('hitButton').remove()
+    } else if (hitCount == 1) {
+        console.log(`HIT COUNT = ${hitCount}`)
+        document.getElementById('hitButton2').remove()
+    } else if (hitCount == 2) {
+        document.getElementById('hitButton2').remove()
+    } else if (hitCount == 3) {
+        document.getElementById('hitButton4').remove()
+    }
 
-    document.getElementById('hitButton').remove()
     document.getElementById('stayButton').remove()
 
     document.getElementById('restartButton').remove()
@@ -4051,14 +4131,37 @@ function restartGame4() { // RESTARTS THE GAME
     document.getElementById('inGameContainer').removeChild(displayComputerCard1);
     document.getElementById('inGameContainer').removeChild(displayComputerCard2);
 
+    document.getElementById('deckPile1').remove();
+    document.getElementById('deckPile2').remove();
+    document.getElementById('deckPile3').remove();
+    document.getElementById('deckPile4').remove();
+    document.getElementById('deckPile5').remove();
+
     document.getElementById('inGameContainer').removeChild(displayStayCard2)
     document.getElementById('inGameContainer').removeChild(displayStayCard3)
     document.getElementById('inGameContainer').removeChild(displayStayCard4)
 
+    if(hitCount == 1){
+        document.getElementById('inGameContainer').removeChild(displayHitCard1);
+    }else if(hitCount == 2){
+        document.getElementById('inGameContainer').removeChild(displayHitCard1);
+        document.getElementById('inGameContainer').removeChild(displayHitCard2);
+    }else if(hitCount == 3){
+        document.getElementById('inGameContainer').removeChild(displayHitCard1);
+        document.getElementById('inGameContainer').removeChild(displayHitCard2);
+        document.getElementById('inGameContainer').removeChild(displayHitCard3);
+    }
 
+    if (hitCount == 0) {
+        document.getElementById('hitButton').remove()
+    } else if (hitCount == 1) {
+        document.getElementById('hitButton2').remove()
+    } else if (hitCount == 2) {
+        document.getElementById('hitButton3').remove()
+    } else if (hitCount == 3) {
+        document.getElementById('hitButton4').remove()
+    }
 
-
-    document.getElementById('hitButton').remove()
     document.getElementById('stayButton').remove()
 
     document.getElementById('restartButton').remove()
@@ -4074,6 +4177,8 @@ function restartGame5() { // RESTARTS THE GAME
     document.getElementById('inGameContainer').removeChild(displayComputerCard1);
     document.getElementById('inGameContainer').removeChild(displayComputerCard2);
 
+    document.getElementById('inGameContainer').removeChild(computerHiddenCard);
+
     document.getElementById('inGameContainer').removeChild(displayHitCard1);
 
     document.getElementById('hitButton').remove()
@@ -4081,6 +4186,12 @@ function restartGame5() { // RESTARTS THE GAME
 
     document.getElementById('restartButton').remove()
     document.getElementById('endGameText').remove()
+
+    document.getElementById('deckPile1').remove();
+    document.getElementById('deckPile2').remove();
+    document.getElementById('deckPile3').remove();
+    document.getElementById('deckPile4').remove();
+    document.getElementById('deckPile5').remove();
 
     startGame();
 }
@@ -4092,14 +4203,22 @@ function restartGame6() { // RESTARTS THE GAME
     document.getElementById('inGameContainer').removeChild(displayComputerCard1);
     document.getElementById('inGameContainer').removeChild(displayComputerCard2);
 
+    document.getElementById('inGameContainer').removeChild(computerHiddenCard);
+
     document.getElementById('inGameContainer').removeChild(displayHitCard1);
     document.getElementById('inGameContainer').removeChild(displayHitCard2);
 
-    document.getElementById('hitButton').remove()
+    document.getElementById('hitButton2').remove()
     document.getElementById('stayButton').remove()
 
     document.getElementById('restartButton').remove()
     document.getElementById('endGameText').remove()
+
+    document.getElementById('deckPile1').remove();
+    document.getElementById('deckPile2').remove();
+    document.getElementById('deckPile3').remove();
+    document.getElementById('deckPile4').remove();
+    document.getElementById('deckPile5').remove();
 
     startGame();
 }
@@ -4111,15 +4230,23 @@ function restartGame7() { // RESTARTS THE GAME
     document.getElementById('inGameContainer').removeChild(displayComputerCard1);
     document.getElementById('inGameContainer').removeChild(displayComputerCard2);
 
+    document.getElementById('inGameContainer').removeChild(computerHiddenCard);
+
     document.getElementById('inGameContainer').removeChild(displayHitCard1);
     document.getElementById('inGameContainer').removeChild(displayHitCard2);
     document.getElementById('inGameContainer').removeChild(displayHitCard3);
 
-    document.getElementById('hitButton').remove()
+    document.getElementById('hitButton3').remove()
     document.getElementById('stayButton').remove()
 
     document.getElementById('restartButton').remove()
     document.getElementById('endGameText').remove()
+
+    document.getElementById('deckPile1').remove();
+    document.getElementById('deckPile2').remove();
+    document.getElementById('deckPile3').remove();
+    document.getElementById('deckPile4').remove();
+    document.getElementById('deckPile5').remove();
 
     startGame();
 }
