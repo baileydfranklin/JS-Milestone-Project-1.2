@@ -4076,7 +4076,6 @@ function restartGame2() { // RESTARTS THE GAME
         document.getElementById('hitButton3').remove();
     } else if (hitCount == 3) {
         document.getElementById('deleteHitButton1').remove();
-        document.getElementById('hitButton2').remove();
         document.getElementById('deleteHitButton2').remove();
         document.getElementById('hitButton3').remove();
     }
@@ -4173,7 +4172,6 @@ function restartGame4() { // RESTARTS THE GAME
     } else if (hitCount == 1) {
         document.getElementById('deleteHitButton1').remove()
         document.getElementById('hitButton2').remove()
-        document.getElementById('deleteHitButton2').remove();
     } else if (hitCount == 2) {
         document.getElementById('deleteHitButton1').remove();
         document.getElementById('hitButton2').remove();
